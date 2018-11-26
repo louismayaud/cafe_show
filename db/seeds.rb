@@ -8,7 +8,7 @@
 
 require 'faker'
 
-puts 'Creating 100 fake coffees'
+puts 'Creating 50 fake coffees'
 50.times do
   coffee = Coffee.new(
     price_per_unit: rand(15.0..40.0)
@@ -18,7 +18,7 @@ puts 'Creating 100 fake coffees'
     country_origin: Faker::Coffee.origin
     stock: rand(1..20)
     unit_sold: rand (1..20)
-    picture:
+    picture: Cloudinary::Uploader.upload("coffee_main.jpg")
     blend_name: Faker::Coffee.blend_name
     tree: ["Arabica", "Robusta"].sample(1)
     description: Faker::Coffee.notes
@@ -26,3 +26,4 @@ puts 'Creating 100 fake coffees'
   coffee.save!
 end
 puts 'Finished!'
+
