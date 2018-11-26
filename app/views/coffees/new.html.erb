@@ -1,0 +1,8 @@
+<%= simple_form_for (@coffee) do |c| %>
+  <%= c.input :blend_name %>
+  <%= c.input :flavour %>
+  <%= c.input :intensity %>
+  <%= c.input :machine %>
+  <%= c.input :country_origin %>
+  <%= c.submit "add a coffee", class: "btn btn-primary" %>
+<% end %>
