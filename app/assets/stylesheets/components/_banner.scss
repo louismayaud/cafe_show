@@ -1,0 +1,11 @@
+.home-banner {
+  background-size: cover;
+  background-image: url('https://images.unsplash.com/photo-1529502669403-c073b74fcefb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a09a2b726fa38b28491db50d919d7938&auto=format&fit=crop&w=2850&q=80');
+  height: calc(100vh - 70px);
+  display:flex;
+  justify-content:center;
+  align-items: start;
+  p {
+    color:white;
+  }
+}
