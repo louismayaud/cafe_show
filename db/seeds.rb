@@ -11,19 +11,18 @@ require 'faker'
 puts 'Creating 50 fake coffees'
 50.times do
   coffee = Coffee.new(
-    price_per_unit: rand(15.0..40.0)
-    intensity: rand(0..5)
-    machine: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"].sample(1)
-    flavour: ["Sweet", "Fruity", "Bitter", "Citric"].sample(1)
-    country_origin: Faker::Coffee.origin
-    stock: rand(1..20)
-    unit_sold: rand (1..20)
-    picture: Cloudinary::Uploader.upload("coffee_main.jpg")
-    blend_name: Faker::Coffee.blend_name
-    tree: ["Arabica", "Robusta"].sample(1)
-    description: Faker::Coffee.notes
+    price_per_unit: rand(15.0..40.0),
+    intensity: rand(0..5),
+    machine: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"].sample(1),
+    flavour: ["Sweet", "Fruity", "Bitter", "Citric"].sample(1),
+    country_origin: Faker::Coffee.origin,
+    stock: rand(1..20),
+    unit_sold: rand (1..20),
+    picture: Cloudinary::Uploader.upload("coffee_main.jpg"),
+    blend_name: Faker::Coffee.blend_name,
+    tree: ["Arabica", "Robusta"].sample(1),
+    description: Faker::Coffee.notes,
   )
   coffee.save!
 end
 puts 'Finished!'
-
