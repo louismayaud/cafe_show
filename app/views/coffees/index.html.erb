@@ -1,0 +1,9 @@
+<h1>My Coffees</h1>
+<div class= "coffee_list">
+  <% @coffees.each do |coffee| %>
+    <p><%= coffee.name%></p>
+    <p> <%= coffee.description %></p>
+    <p><%= coffee.quantity %></p>
+    <p><%= coffee.price %></p>
+  <% end %>
+</div>
