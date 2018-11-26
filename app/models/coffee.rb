@@ -8,7 +8,7 @@ class Coffee < ApplicationRecord
   validates :intensity, presence: true, inclusion: { in: [0, 1, 2, 3, 4, 5] }, numericality: { only_integer: true }
   validates :machine, presence: true, inclusion: { in: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"] }
   validates :flavour, presence: true, inclusion: { in: ["Sweet", "Fruity", "Bitter", "Citric"] }
-  validates :country_origin, presence: true
+  validates :provenance, presence: true
   validates :stock, presence: true, numericality: { only_integer: true }
   validates :blend_name, presence: true
   validates :unit_sold, numericality: { only_integer: true }
