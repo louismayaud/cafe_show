@@ -1,8 +1,15 @@
-<%= simple_form_for (@coffee) do |c| %>
-  <%= c.input :blend_name %>
-  <%= c.input :flavour %>
-  <%= c.input :intensity %>
-  <%= c.input :machine %>
-  <%= c.input :provenance, label: 'Country of Origin' %>
-  <%= c.submit "add a coffee", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="form-container-new">
+    <%= simple_form_for (@coffee) do |c| %>
+      <%= c.input :blend_name, label: 'Blend Name' %>
+      <%= c.input :provenance, label: 'Country of Origin' %>
+      <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"] %>
+      <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"] %>
+      <%= c.input :intensity, collection: ["1", "2", "3", "4", "5"] %>
+      <%= c.input :stock, label: 'Max per day' %>
+      <%= c.input :price_per_unit, label: 'Price' %>
+
+      <%= c.submit "add a coffee", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
