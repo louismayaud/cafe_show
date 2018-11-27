@@ -27,39 +27,42 @@ COMPANY_PUBLIC_IDS = [
 
 def fetch_coffee_images(coffee)
   resource = Cloudinary::Api.resource(COFFEE_PUBLIC_IDS.sample)
-  resource_type = resource["resource_type"]
-  type = resource["type"]
   public_id = resource["public_id"]
   version = resource["version"]
   format = resource["format"]
-  signature = Cloudinary::Utils.api_sign_request({public_id: public_id, version: version}, Cloudinary.config.api_secret)
-  image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
+  image = "v#{version}/#{public_id}.#{format}"
   coffee.picture = image
 end
 
 def fetch_avatar_images(user)
   resource = Cloudinary::Api.resource(AVATAR_PUBLIC_IDS.sample)
-  resource_type = resource["resource_type"]
-  type = resource["type"]
   public_id = resource["public_id"]
   version = resource["version"]
   format = resource["format"]
-  signature = Cloudinary::Utils.api_sign_request({public_id: public_id, version: version}, Cloudinary.config.api_secret)
-  image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
+  image = "v#{version}/#{public_id}.#{format}"
   user.avatar = image
 end
 
 def fetch_company_images(user)
   resource = Cloudinary::Api.resource(COMPANY_PUBLIC_IDS.sample)
-  resource_type = resource["resource_type"]
-  type = resource["type"]
   public_id = resource["public_id"]
   version = resource["version"]
   format = resource["format"]
-  signature = Cloudinary::Utils.api_sign_request({public_id: public_id, version: version}, Cloudinary.config.api_secret)
-  image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
+  image = "v#{version}/#{public_id}.#{format}"
   user.avatar = image
 end
+
+puts 'creating a common seller'
+seller_user = User.new(
+  name: Faker::Company.name,
+  email: "seller@gmail.com",
+  password: '12345678',
+  billing_information: rand(1000000000..5000000000),
+  address: Faker::Address.full_address,
+  introduction: Faker::TvShows::Friends.quote
+)
+fetch_company_images(seller_user)
+seller_user.save!
 
 puts 'Creating sellers'
 
@@ -96,6 +99,19 @@ puts 'Creating sellers'
   end
 end
 
+puts 'creating a common buyer'
+
+buyer_user = User.new(
+  name: Faker::Company.name,
+  email: "buyer@gmail.com",
+  password: '12345678',
+  billing_information: rand(1000000000..5000000000),
+  address: Faker::Address.full_address,
+  introduction: Faker::TvShows::Friends.quote
+)
+fetch_avatar_images(buyer_user)
+buyer_user.save!
+
 puts 'Creating 10 buyers'
 
 10.times do
@@ -112,4 +128,3 @@ puts 'Creating 10 buyers'
 end
 
 puts 'Finished!'
-
