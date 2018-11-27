@@ -1,0 +1,23 @@
+<h1>My Coffees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>description </th>
+      <th>quantity </th>
+      <th>price </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coffees.each do |coffee| %>
+      <tr>
+        <td><%= coffee.name%></td>
+        <td> <%= coffee.description %></td>
+        <td><%= coffee.quantity %></td>
+        <td><%= coffee.price %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
