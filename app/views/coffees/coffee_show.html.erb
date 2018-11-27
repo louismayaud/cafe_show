@@ -1,8 +1,19 @@
 coffee_show.html.erb
 
 <div>
-  <div>
-    <h1><%= coffe.name %>  </h1>
+  <h1><%= coffe.name %>  </h1>
+  <div class="coffee-caracteristics">
+    <ul>
+      <li>Intensity : <%= coffee.intensity %></li>
+      <li><%= coffee.machine %> </li>
+      <li><%= coffee.flavour %> </li>
+    </ul>
   </div>
-
+  <div class="coffee-price">
+    <p><%= coffee.price_per_unit %> €</p>
+  </div>
+  <div class="coffee-provenance">
+    <%#= coffee.provenance %>Provenance
+  </div>
 </div>
+
