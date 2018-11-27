@@ -1,6 +1,5 @@
 class CoffeesController < ApplicationController
   before_action :set_coffee, only: [:edit, :show, :update, :destroy]
-
   def index
     @coffees = Coffee.all
   end
@@ -29,6 +28,7 @@ class CoffeesController < ApplicationController
 
   def update
     @coffee.user = current.user
+
     if @coffee.update(coffee_params)
       redirect_to coffee_path(@coffee)
     else
@@ -43,8 +43,12 @@ class CoffeesController < ApplicationController
 
   private
 
+  def set_coffee
+    @coffee = Coffee.find(params[:id])
+  end
+
   def coffee_params
-    params.require(:coffee).permit(:blend_name, :provenance, :machine, :flavour, :intensity, :stock, :price_per_unit, :tree)
+    params.require(:coffee).permit(:blend_name, :provenance, :machine, :flavour, :intensity, :stock, :price_per_unit, :tree, :photo)
   end
 
   def set_coffee

@@ -53,3 +53,11 @@
   </div>
   <% end %>
 </div>
+
+<%= simple_form_for(@coffee) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <!-- [...] -->
+<% end %>
+
