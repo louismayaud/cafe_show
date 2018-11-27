@@ -1,7 +1,8 @@
 class PurchasesController < ApplicationController
   def index
-    @purchases = Purchase.all
+    @purchases = policy_scope(Purchase) # .order(created_at: :desc)
     @coffees = Coffee.all
+
   end
 
   def show
@@ -21,22 +22,7 @@ class PurchasesController < ApplicationController
     end
   end
 
-  def edit
-    @purchase = Purchase.find(params[:id])
-  end
-
-  def update
-    @purchase = Purchase.find(params[:id])
-    if @purchase.update(purchase_params)
-      redirect_to purchase_path(@purchase)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @purchase = Purchase.find(params[:id])
-    @purchase.destroy
-    redirect_to purchases_path
+  def purchase_params
+    params.require(:purchase).permit(:quantity, :price)
   end
 end
