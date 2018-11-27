@@ -7,12 +7,9 @@
   text-align: center;
   margin: 50px;
   background: white;
-
 }
 
-.message-description {
-  flex: 0 0 40%;
-}
+
 
 .message {
   background: white;
@@ -24,9 +21,28 @@
 .message-name {
   font-size: 20px;
   text-transform: uppercase;
-  width: 170px;
+  width: 150px;
   text-align: left;
 }
+
+.characteristics {
+  width: 200px;
+  display:flex;
+  text-align:left;
+  justify-content:space-around;
+}
+.characteristics-name{
+  max-width: 80px;
+}
+.characteristics-value{
+  width: flex;
+  text-align: right;
+}
+
+.message-description {
+  flex: 0 0 35%;
+}
+
 
 .boxes-number {
   width: 200px;

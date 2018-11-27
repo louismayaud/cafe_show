@@ -4,14 +4,22 @@
   <div class="card-user">
     <div class= "image">
       <img src=image class="coffee-image">
+      <%= cl_image_tag coffee.picture, height: 300, width: 400, crop: :fill %>
     </div>
     <div class ="message-name">
       <p> <%= coffee.blend_name %></p>
     </div>
-    <div>
-      <p>intensity: </p>
-      <p>flavor: </p>
-      <p>machine: </p>
+    <div class="characteristics">
+      <div class="characteristics-name">
+        <p>intensity: </p>
+        <p>flavor: </p>
+        <p>machine: </p>
+      </div>
+      <div class="characteristics-value">
+        <p><%= coffee.intensity%></p>
+        <p><%= coffee.flavour%></p>
+        <p><%= coffee.machine%></p>
+      </div>
     </div>
     <div class ="message-description">
       <p width="50%"> <%= coffee.description %></p>

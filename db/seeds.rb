@@ -8,10 +8,10 @@
 
 require 'faker'
 require "cloudinary"
-
+require 'awesome_print'
 puts "Destroying users and coffees"
-User.destroy_all
 
+User.destroy_all
 # puts "fetch public ids from cloudinary"
 #
  # pictures = Cloudinary::Api.resources["resources"]
@@ -33,7 +33,7 @@ def fetch_coffee_images(coffee)
   version = resource["version"]
   format = resource["format"]
   signature = Cloudinary::Utils.api_sign_request({public_id: public_id, version: version}, Cloudinary.config.api_secret)
-  image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
+  p image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
   coffee.picture = image
 end
 
@@ -45,7 +45,7 @@ def fetch_avatar_images(user)
   version = resource["version"]
   format = resource["format"]
   signature = Cloudinary::Utils.api_sign_request({public_id: public_id, version: version}, Cloudinary.config.api_secret)
-  image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
+  p image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
   user.avatar = image
 end
 
@@ -57,7 +57,7 @@ def fetch_company_images(user)
   version = resource["version"]
   format = resource["format"]
   signature = Cloudinary::Utils.api_sign_request({public_id: public_id, version: version}, Cloudinary.config.api_secret)
-  image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
+  p image = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}##{signature}"
   user.avatar = image
 end
 
@@ -73,6 +73,7 @@ puts 'Creating sellers'
     introduction: Faker::TvShows::Friends.quote
   )
   fetch_company_images(user)
+  ap user
   user.save!
 
     puts 'Creating 2 fake coffees for this user'
@@ -92,6 +93,7 @@ puts 'Creating sellers'
     )
     coffee.user = user
     fetch_coffee_images(coffee)
+    ap coffee
     coffee.save!
   end
 end
