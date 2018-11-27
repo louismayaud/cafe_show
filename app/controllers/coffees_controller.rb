@@ -12,9 +12,10 @@ class CoffeesController < ApplicationController
   end
 
   def create
+    @user = current.user
     @coffee = Coffee.new(coffee_params)
     if @coffee.save
-      redirect_to coffee_path(@coffee)
+      redirect_to root_path
     else
       render :new
     end
@@ -37,5 +38,11 @@ class CoffeesController < ApplicationController
     @coffee = Coffee.find(params[:id])
     @coffee.destroy
     redirect_to coffee_path
+  end
+
+  private
+
+  def coffee_params
+    params.require(:coffee).permit(:blend_name, :provenance, :machine, :flavour, :intensity, :stock, :price_per_unit, :tree)
   end
 end
