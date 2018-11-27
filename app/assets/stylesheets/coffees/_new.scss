@@ -1,0 +1,52 @@
+
+.card-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  margin: 50px;
+  background: white;
+
+}
+
+.message-description {
+  flex: 0 0 40%;
+}
+
+.message {
+  background: white;
+  padding: 10px;
+  display:flex;
+  align-items: center;
+}
+
+.message-name {
+  font-size: 20px;
+  text-transform: uppercase;
+  width: 170px;
+  text-align: left;
+}
+
+.boxes-number {
+  width: 200px;
+  display:flex;
+  text-align:left;
+  justify-content:space-around;
+}
+
+.card-user p {
+  margin-bottom: 0px;
+}
+
+.title-number{
+  max-width: 80px;
+}
+.number-number{
+  max-width: 100px;
+}
+
+.edit_delete {
+  padding:10px;
+  margin-left: 20px;
+}
