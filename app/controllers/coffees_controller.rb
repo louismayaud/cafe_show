@@ -1,7 +1,7 @@
 class CoffeesController < ApplicationController
   before_action :set_coffee, only: [:edit, :show, :update, :destroy]
   def index
-    @coffees = policy_scope(Coffees).order(created_at: :desc)
+    @coffees = policy_scope(Coffee).order(created_at: :desc)
   end
 
   def show
