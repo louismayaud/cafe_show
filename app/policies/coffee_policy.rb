@@ -1,4 +1,8 @@
 class CoffeePolicy < ApplicationPolicy
+  def show?
+    true
+  end
+
   def create?
     true
   end
@@ -13,7 +17,7 @@ class CoffeePolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 end

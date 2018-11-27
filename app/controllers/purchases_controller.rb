@@ -1,12 +1,11 @@
 class PurchasesController < ApplicationController
   def index
-    @purchases = policy_scope(Purchase) # .order(created_at: :desc)
-    @coffees = Coffee.all
-
+    @purchases = policy_scope(Purchase).order(created_at: :desc)
   end
 
   def show
     @purchase = Purchase.find(params[:id])
+    authorize @purchase
   end
 
   def new
@@ -14,7 +13,13 @@ class PurchasesController < ApplicationController
   end
 
   def create
+    user = current_user
+    coffee = Coffee.find(params[:id])
     @purchase = Purchase.new(purchase_params)
+    authorize @coffee
+    @purchase.user = user
+    @purchase.coffee = coffee
+
     if @purchase.save
       redirect_to purchase_path(@purchase)
     else
