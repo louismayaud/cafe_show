@@ -1,6 +1,13 @@
 source 'https://rubygems.org'
 ruby '2.4.5'
 
+# gem faker to seed db
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+# gem cloudinary to store pictures FROM KITT
+gem 'dotenv-rails', groups: [:development, :test]
+# gem cloudinary to store pictures2 FROM KITT
+gem 'cloudinary', '~> 1.9.1'
+
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
@@ -27,5 +34,5 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
+  # gem 'dotenv-rails'
 end
