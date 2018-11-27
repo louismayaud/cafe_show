@@ -1,7 +1,7 @@
 class CoffeesController < ApplicationController
   before_action :set_coffee, only: [:edit, :show, :update, :destroy]
   def index
-    @coffees = Coffee.all
+    @coffees = Coffee.where(user: current_user)
   end
 
   def show
@@ -12,6 +12,7 @@ class CoffeesController < ApplicationController
   end
 
   def create
+    @user = current_user
     @coffee = Coffee.new(coffee_params)
     authorize @coffee
     @coffee.user = current_user
