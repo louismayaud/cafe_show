@@ -1,38 +1,39 @@
-
-<div class="container">
-  <h1>My previous purchases</h1>
-  <div class="card-container">
-    <% @coffees.each do |coffee| %>
-      <div class="coffee-card">
-        <%= link_to root_path do %>
-        <div class="coffee-card-main">
-          <%= coffee.blend_name.capitalize %>
-          <div class="coffee-tree">
-            <%= coffee.tree.capitalize %>
-          </div>
-          <div class="coffee-user">
-            <%#= image_tag coffee.avatar.url(:thumb) %>
-          </div>
-        </div>
-        <div class="coffee-card-footer">
-          <div class="coffee-caracteristics">
-            <ul>
-              <li>Intensity : <%= coffee.intensity %></li>
-              <li><%= coffee.machine %> </li>
-              <li><%= coffee.flavour %> </li>
-            </ul>
-          </div>
-          <div class="coffee-footer-price-and-provenance">
-            <div class="coffee-price">
-              <p><%= coffee.price_per_unit %> €</p>
+<div class="wrapper">
+  <div class="container">
+    <h1>My previous purchases</h1>
+    <div class="card-container">
+      <% @purchases.each do |purchase| %>
+        <div class="coffee-card">
+          <%= link_to root_path do %>
+          <div class="coffee-card-main">
+            <%= purchase.coffee.blend_name.capitalize %>
+            <div class="coffee-tree">
+              <%= purchase.coffee.tree.capitalize %>
             </div>
-            <div class="coffee-provenance">
-              <%#= coffee.provenance %>Provenance
+            <div class="coffee-user">
+              <%# image_tag coffee.avatar.url(:thumb) %>
             </div>
           </div>
+          <div class="coffee-card-footer">
+            <div class="coffee-caracteristics">
+              <ul>
+                <li>Intensity : <%= purchase.coffee.intensity %></li>
+                <li><%= purchase.coffee.machine %> </li>
+                <li><%= purchase.coffee.flavour %> </li>
+              </ul>
+            </div>
+            <div class="coffee-footer-price-and-provenance">
+              <div class="coffee-price">
+                <p><%= purchase.coffee.price_per_unit %> €</p>
+              </div>
+              <div class="coffee-provenance">
+                <%= purchase.coffee.provenance %>Provenance
+              </div>
+            </div>
+          </div>
+          <% end %>
         </div>
-        <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

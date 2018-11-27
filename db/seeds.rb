@@ -87,7 +87,7 @@ puts 'Creating sellers'
         intensity: rand(0..5),
         machine: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"].sample,
         flavour: ["Sweet", "Fruity", "Bitter", "Citric"].sample,
-        country_origin: Faker::Coffee.origin,
+        provenancer: Faker::Coffee.origin,
         stock: rand(1..20),
         unit_sold: rand(1..20),
         blend_name: Faker::Coffee.blend_name,
