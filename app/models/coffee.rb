@@ -11,8 +11,6 @@ class Coffee < ApplicationRecord
   validates :provenance, presence: true
   validates :stock, presence: true, numericality: { only_integer: true }
   validates :blend_name, presence: true
-  validates :unit_sold, numericality: { only_integer: true }
   validates :tree, presence: true, inclusion: { in: ["Arabica", "Robusta"] }
   # mount_uploader :photo, PhotoUploader
-
 end
