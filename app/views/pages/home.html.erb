@@ -1,3 +1,38 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/banner' %>
+<div class="container">
+  <h1><%= @coffees.count %> coffees available !</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
+  <div class="card-container">
+    <% @coffees.each do |coffee| %>
+      <div class="coffee-card">
+        <div class="coffee-card-main">
+          <%= coffee.blend_name.capitalize %>
+          <div class="coffee-tree">
+            <%= coffee.tree.capitalize %>
+          </div>
+          <div class="coffee user">
+            <%= coffee.user.avatar %>
+          </div>
+        </div>
+        <div class="coffee-card-footer">
+          <div class="coffee-caracteristics">
+            <ul>
+              <li>Intensity : <%= coffee.intensity %></li>
+              <li><%= coffee.machine %> </li>
+              <li><%= coffee.flavour %> </li>
+            </ul>
+          </div>
+          <div class="coffee-price">
+            <p><%= coffee.price_per_unit %> €</p>
+          </div>
+          <div class="coffee-provenance">
+            <%#= coffee.provenance %>Provenance
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
 
