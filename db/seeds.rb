@@ -8,10 +8,10 @@
 
 require 'faker'
 require "cloudinary"
-
+require 'awesome_print'
 puts "Destroying users and coffees"
-User.destroy_all
 
+User.destroy_all
 # puts "fetch public ids from cloudinary"
 #
  # pictures = Cloudinary::Api.resources["resources"]
@@ -76,6 +76,7 @@ puts 'Creating sellers'
     introduction: Faker::TvShows::Friends.quote
   )
   fetch_company_images(user)
+  ap user
   user.save!
 
     puts 'Creating 2 fake coffees for this user'
@@ -95,6 +96,7 @@ puts 'Creating sellers'
     )
     coffee.user = user
     fetch_coffee_images(coffee)
+    ap coffee
     coffee.save!
   end
 end
