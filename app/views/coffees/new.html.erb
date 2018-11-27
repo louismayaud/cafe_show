@@ -1,4 +1,11 @@
+
 <div class="row container_newform">
+  <div class="photo_uploader col-md-3">
+  <%= simple_form_for(@coffee) do |f| %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+  <% end %>
+  </div>
   <%= simple_form_for (@coffee) do |c| %>
 
     <% if @coffee.errors.any? %>
@@ -11,7 +18,7 @@
       </div>
     <% end %>
 
-  <div class="col-md-offset-3 col-md-6">
+  <div class="col-md-6">
     <div class="input_element_inline">
       <div class="input_element">
         <%= c.input :blend_name, label: 'Blend Name' %>
@@ -54,10 +61,4 @@
   <% end %>
 </div>
 
-<%= simple_form_for(@coffee) do |f| %>
-  <!-- [...] -->
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <!-- [...] -->
-<% end %>
 
