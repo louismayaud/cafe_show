@@ -3,8 +3,7 @@
 <% @coffees.each do |coffee| %>
   <div class="card-user">
     <div class= "image">
-      <img src=image class="coffee-image">
-      <%= cl_image_tag coffee.picture, height: 200, width: 300, crop: :fill%>
+      <%= cl_image_tag coffee.picture, height: 100, width: 200, crop: :fill%>
     </div>
     <div class ="message-name">
       <p> <%= coffee.blend_name %></p>
