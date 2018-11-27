@@ -1,19 +1,17 @@
 <h1>My Coffees</h1>
 
-
-<!--     <div class="headings">
-      <p>name </p>
-      <p>description </p>
-      <p>price </p>
-      <p>quantity</p>
-      <p> unit sold</p>
-    </tr>
-    </div>
- -->
 <% @coffees.each do |coffee| %>
   <div class="card-user">
+    <div class= "image">
+      <img src=image class="coffee-image">
+    </div>
     <div class ="message-name">
       <p> <%= coffee.blend_name %></p>
+    </div>
+    <div>
+      <p>intensity: </p>
+      <p>flavor: </p>
+      <p>machine: </p>
     </div>
     <div class ="message-description">
       <p width="50%"> <%= coffee.description %></p>
@@ -37,9 +35,8 @@
       </div>
       <div class= "edit_delete">
         <p><%=link_to "<i class='fas fa-edit'></i>".html_safe, coffees_path%></p>
-        <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffees_path, method: :delete %></p>
+        <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffee_path(coffee), method: :delete %></p>
       </div>
     </div>
-
   </div>
 <% end %>
