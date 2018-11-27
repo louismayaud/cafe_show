@@ -1,6 +1,6 @@
-<%= render 'shared/banner' %>
+
 <div class="container">
-  <h1><%= @coffees.count %> coffees found for you</h1>
+  <h1>My previous purchases</h1>
   <div class="card-container">
     <% @coffees.each do |coffee| %>
       <div class="coffee-card">
@@ -36,5 +36,3 @@
     <% end %>
   </div>
 </div>
-
-
