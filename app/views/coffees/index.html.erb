@@ -1,23 +1,50 @@
 <h1>My Coffees</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>description </th>
-      <th>quantity </th>
-      <th>price </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @coffees.each do |coffee| %>
-      <tr>
-        <td><%= coffee.name %></td>
-        <td> <%= coffee.description %></td>
-        <td><%= coffee.quantity %></td>
-        <td><%= coffee.price %></td>
-      </tr>
-      <% end %>
-  </tbody>
-</table>
+<% @coffees.each do |coffee| %>
+  <div class="card-user">
+    <div class= "image">
+      <img src=image class="coffee-image">
+      <%= cl_image_tag coffee.picture, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class ="message-name">
+      <p> <%= coffee.blend_name %></p>
+    </div>
+    <div class="characteristics">
+      <div class="characteristics-name">
+        <p>intensity: </p>
+        <p>flavor: </p>
+        <p>machine: </p>
+      </div>
+      <div class="characteristics-value">
+        <p><%= coffee.intensity%></p>
+        <p><%= coffee.flavour%></p>
+        <p><%= coffee.machine%></p>
+      </div>
+    </div>
+    <div class ="message-description">
+      <p width="50%"> <%= coffee.description %></p>
+    </div>
+    <div class = "boxes-number">
+      <div class= "title-number">
+        <p>price: </p>
+        <p>stock: </p>
+        <p>unit sold: </p>
+      </div>
+      <div class="number-number">
+        <div class ="message-price">
+          <p><%= coffee.price_per_unit%>€</p>
+        </div>
+        <div class ="message-stock">
+          <p><%= coffee.stock %></p>
+        </div>
+        <div class ="message-stock">
+          <p><%= coffee.unit_sold %></p>
+        </div>
+      </div>
+      <div class= "edit_delete">
+        <p><%=link_to "<i class='fas fa-edit'></i>".html_safe, coffees_path%></p>
+        <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffee_path(coffee), method: :delete %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
