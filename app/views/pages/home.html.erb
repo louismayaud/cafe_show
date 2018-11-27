@@ -1,10 +1,10 @@
 <%= render 'shared/banner' %>
 <div class="container">
-  <h1><%= @coffees.count %> coffees found for you</h1>
+  <h1><%= @coffees.count %> coffees around you</h1>
   <div class="card-container">
     <% @coffees.each do |coffee| %>
       <div class="coffee-card">
-        <%= link_to root_path do %>
+        <%= link_to coffee_path(coffee) do %>
         <div class="coffee-card-main">
           <%= coffee.blend_name.capitalize %>
           <div class="coffee-tree">
@@ -27,7 +27,7 @@
               <p><%= coffee.price_per_unit %> €</p>
             </div>
             <div class="coffee-provenance">
-              <%#= coffee.provenance %>Provenance
+              <%= coffee.provenance %>
             </div>
           </div>
         </div>
