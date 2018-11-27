@@ -1,16 +1,16 @@
 <%= render 'shared/banner' %>
 <div class="container">
-  <h1><%= @coffees.count %> coffees available !</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+  <h1><%= @coffees.count %> coffees found for you</h1>
   <div class="card-container">
     <% @coffees.each do |coffee| %>
       <div class="coffee-card">
+        <%= link_to root_path do %>
         <div class="coffee-card-main">
           <%= coffee.blend_name.capitalize %>
           <div class="coffee-tree">
             <%= coffee.tree.capitalize %>
           </div>
-          <div class="coffee user">
+          <div class="coffee-user">
             <%= coffee.user.avatar %>
           </div>
         </div>
@@ -22,16 +22,18 @@
               <li><%= coffee.flavour %> </li>
             </ul>
           </div>
-          <div class="coffee-price">
-            <p><%= coffee.price_per_unit %> €</p>
-          </div>
-          <div class="coffee-provenance">
-            <%#= coffee.provenance %>Provenance
+          <div class="coffee-footer-price-and-provenance">
+            <div class="coffee-price">
+              <p><%= coffee.price_per_unit %> €</p>
+            </div>
+            <div class="coffee-provenance">
+              <%#= coffee.provenance %>Provenance
+            </div>
           </div>
         </div>
+        <% end %>
       </div>
     <% end %>
-
   </div>
 </div>
 
