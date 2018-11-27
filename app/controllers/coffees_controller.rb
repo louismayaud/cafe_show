@@ -1,6 +1,6 @@
 class CoffeesController < ApplicationController
   def index
-    @coffees = Coffee.all
+    @coffees = Coffee.where(user: current_user)
   end
 
   def show
@@ -12,7 +12,7 @@ class CoffeesController < ApplicationController
   end
 
   def create
-    @user = current.user
+    @user = current_user
     @coffee = Coffee.new(coffee_params)
     if @coffee.save
       redirect_to root_path
