@@ -11,7 +11,7 @@
             <%= coffee.tree.capitalize %>
           </div>
           <div class="coffee user">
-            <%= cl_image_tag coffee.user.avatar %>
+            <%= cl_image_tag coffee.user.avatar, :width=>80, :crop=>"scale" %>
           </div>
         </div>
         <div class="coffee-card-footer">
