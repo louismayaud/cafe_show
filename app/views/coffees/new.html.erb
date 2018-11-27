@@ -1,24 +1,39 @@
-<div class="container">
-  <div class="form-container-new">
-    <%= simple_form_for (@coffee) do |c| %>
-    <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
-        <%= c.input :blend_name, label: 'Blend Name' %>
+<div class="row container_newform">
+  <%= simple_form_for (@coffee) do |c| %>
+  <div class="col-md-offset-3 col-md-6">
+    <div class="input_element">
+      <%= c.input :blend_name, label: 'Blend Name' %>
+    </div>
+
+    <div class="input_element_inline">
+      <div class="input_element">
+        <%= c.input :provenance, label: 'Country of Origin' %>
+      </div>
+      <div class="input_element">
+        <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"] %>
       </div>
     </div>
-      <%= c.input :provenance, label: 'Country of Origin' %>
-      <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"] %>
+
+    <div class="input_element_inline">
+      <div class="input_element">
       <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"] %>
-      <%= c.input :intensity, collection: ["1", "2", "3", "4", "5"] %>
-      <div class="row">
-
-        <div class="col-xs-6">
-          <%= c.input :stock, label: 'Availability per day' %>
-          <%= c.input :price_per_unit, label: 'Price' %>
-        </div>
       </div>
+      <div class="input_element">
+      <%= c.input :intensity, collection: ["1", "2", "3", "4", "5"] %>
+      </div>
+    </div>
 
-      <%= c.submit "add a coffee", class: "btn btn-primary" %>
-    <% end %>
+    <div class="input_element_inline">
+      <div class="input_element">
+        <%= c.input :stock, label: 'Availability per day' %>
+      </div>
+      <div class="input_element">
+        <%= c.input :price_per_unit, label: 'Price' %>
+      </div>
+    </div>
+    <div class="input_element_btn">
+      <%= c.submit "add a coffee", class: "btn btn-primary", id: "btn_validate" %>
+    </div>
   </div>
+  <% end %>
 </div>
