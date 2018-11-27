@@ -36,6 +36,7 @@ puts 'Creating sellers'
   user = User.new(
     name: Faker::Company.name,
     email: Faker::Internet.email,
+    password: '12345678',
     billing_information: rand(1000000000..5000000000),
     address: Faker::Address.full_address,
     introduction: Faker::TvShows::Friends.quote
@@ -70,8 +71,9 @@ puts 'Creating 10 buyers'
 
 10.times do
   user = User.new(
-    name: Faker::Lebowski.character,
+    name: Faker::Movies::Lebowski.character,
     email: Faker::Internet.email,
+    password: '12345678',
     billing_information: rand(1000000000..5000000000),
     address: Faker::Address.full_address,
     introduction: Faker::TvShows::Friends.quote,
