@@ -10,8 +10,8 @@
           <div class="coffee-tree">
             <%= coffee.tree.capitalize %>
           </div>
-          <div class="coffee-user">
-            <%#= image_tag coffee.avatar.url(:thumb) %>
+          <div class="coffee user">
+            <%= cl_image_tag coffee.user.avatar %>
           </div>
         </div>
         <div class="coffee-card-footer">
