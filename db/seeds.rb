@@ -128,4 +128,3 @@ puts 'Creating 10 buyers'
 end
 
 puts 'Finished!'
-

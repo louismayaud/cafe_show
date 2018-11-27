@@ -1,0 +1,29 @@
+// .form-container-new {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.input_element_inline {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input_element {
+  width: 100%;
+  padding: 10px;
+}
+
+.container_newform {
+  margin: 10px;
+}
+
+.input_element_btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#btn_validate {
+  margin: 10px;
+}

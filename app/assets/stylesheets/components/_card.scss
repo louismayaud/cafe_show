@@ -11,14 +11,71 @@
   justify-content: center;
   flex-wrap: wrap;
   .coffee-card {
-    box-shadow: 5px 5px 5px rgb(220, 220, 220);
+    box-shadow: 0px 0px 5px rgb(220, 220, 220);
+    transition: all 0.3s;
     flex: 0 0 auto;
     width: 350px;
+    height: 200px;
     margin: 10px;
+  }
+  a {
+    text-decoration:none;
+    color: black;
+  }
+  .coffee-card:hover {
+     margin-top: -10px;
+     opacity: 0.9;
   }
 }
 
+// .card {
+//   flex: 0 0 300px;
+//   margin: 10px;
+//   border-radius: 1px;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+//   transition: all 0.3s;
+// }
+// .card:hover {
+//   margin-top: -10px;
+// }
+
+.coffee-card-main {
+  height: 140px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .coffee-user {
+    border-radius: 50%;
+    width: 20px;
+    position:absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .coffee-tree {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+}
 
 .coffee-card-footer {
   background: white;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+
+  .coffee-footer-price-and-provenance {
+    padding-right: 5px;
+  }
+}
+
+.coffee-caracteristics {
+  ul {
+    margin-bottom: 0px;
+    padding-left: 10px;
+    list-style-type: none;
+  }
 }
