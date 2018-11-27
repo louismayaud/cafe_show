@@ -1,9 +1,23 @@
 <h1>My Coffees</h1>
-<div class= "coffee_list">
-  <% @coffees.each do |coffee| %>
-    <p><%= coffee.name%></p>
-    <p> <%= coffee.description %></p>
-    <p><%= coffee.quantity %></p>
-    <p><%= coffee.price %></p>
-  <% end %>
-</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>description </th>
+      <th>quantity </th>
+      <th>price </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coffees.each do |coffee| %>
+      <tr>
+        <td><%= coffee.name%></td>
+        <td> <%= coffee.description %></td>
+        <td><%= coffee.quantity %></td>
+        <td><%= coffee.price %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
