@@ -9,7 +9,8 @@
   background: white;
 }
 
-
+.image{
+}
 
 .message {
   background: white;
@@ -21,12 +22,12 @@
 .message-name {
   font-size: 20px;
   text-transform: uppercase;
-  width: 150px;
+  width: 120px;
   text-align: left;
 }
 
 .characteristics {
-  width: 200px;
+  width: 250px;
   display:flex;
   text-align:left;
   justify-content:space-around;
@@ -40,7 +41,7 @@
 }
 
 .message-description {
-  flex: 0 0 35%;
+  flex: 0 0 30%;
 }
 
 
@@ -49,6 +50,7 @@
   display:flex;
   text-align:left;
   justify-content:space-around;
+  padding-left: 10px;
 }
 
 .card-user p {
@@ -56,7 +58,7 @@
 }
 
 .title-number{
-  max-width: 80px;
+  width: 100px;
 }
 .number-number{
   max-width: 100px;
