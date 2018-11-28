@@ -8,11 +8,11 @@ class CoffeePolicy < ApplicationPolicy
   end
 
   def update?
-    user == current_user
+    record.user == user
   end
 
   def destroy?
-    user == current_user
+    record.user == user
   end
 
   class Scope < Scope

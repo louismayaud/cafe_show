@@ -23,38 +23,38 @@
         <%= c.input :blend_name, label: 'Blend Name', placeholder: 'blend_name' %>
       </div>
       <div class="input_element">
-        <%= c.input :tree, label: 'Arabica/Robusta', collection: ["Arabica", "Robusta"] %>
+        <%= c.input :tree, label: 'Arabica/Robusta', collection: ["Arabica", "Robusta"], placeholder: 'tree' %>
       </div>
     </div>
 
     <div class="input_element_inline">
       <div class="input_element">
-        <%= c.input :provenance, label: 'Country of Origin' %>
+        <%= c.input :provenance, label: 'Country of Origin', placeholder: 'provenance' %>
       </div>
       <div class="input_element">
-        <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"] %>
-      </div>
-    </div>
-
-    <div class="input_element_inline">
-      <div class="input_element">
-      <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"] %>
-      </div>
-      <div class="input_element">
-      <%= c.input :intensity, collection: ["1", "2", "3", "4", "5"] %>
+        <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"], placeholder: 'machine' %>
       </div>
     </div>
 
     <div class="input_element_inline">
       <div class="input_element">
-        <%= c.input :stock, label: 'Availability per day' %>
+      <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"], placeholder: 'flavour' %>
       </div>
       <div class="input_element">
-        <%= c.input :price_per_unit, label: 'Price' %>
+      <%= c.input :intensity, collection: ["1", "2", "3", "4", "5"], placeholder: 'intensity' %>
+      </div>
+    </div>
+
+    <div class="input_element_inline">
+      <div class="input_element">
+        <%= c.input :stock, label: 'Availability per day', placeholder: 'stock' %>
+      </div>
+      <div class="input_element">
+        <%= c.input :price_per_unit, label: 'Price', placeholder: 'price_per_unit' %>
       </div>
     </div>
     <div class="input_element_btn">
-      <%= c.submit "add a coffee", class: "btn btn-primary", id: "btn_validate" %>
+      <%= c.submit "Edit coffee", class: "btn btn-primary", id: "btn_validate" %>
     </div>
   </div>
   <% end %>

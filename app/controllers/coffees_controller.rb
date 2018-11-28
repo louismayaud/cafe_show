@@ -26,8 +26,13 @@ class CoffeesController < ApplicationController
     end
   end
 
+  def edit
+    authorize @coffee
+  end
+
   def update
-    @coffee.user = current.user
+    @coffee.user = current_user
+    authorize @coffee
 
     if @coffee.update(coffee_params)
       redirect_to coffee_path(@coffee)
