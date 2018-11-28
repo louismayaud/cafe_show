@@ -39,24 +39,35 @@
 //   margin-top: -10px;
 // }
 
+// style="background-image: )
+
+
+
 .coffee-card-main {
   height: 140px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  // display:flex;
+  // justify-content: center;
+  // align-items: center;
   position: relative;
   .coffee-user {
-    border-radius: 50%;
-    width: 20px;
-    position:absolute;
+    border-radius: 10%;
+    position: absolute;
     top: 5px;
     right: 5px;
+    background-color: white
   }
   .coffee-tree {
     position: absolute;
     top: 5px;
     left: 5px;
+    color: white;
   }
+  .coffee-blend-name {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: white;
+}
 }
 
 .coffee-card-footer {
@@ -69,6 +80,11 @@
 
   .coffee-footer-price-and-provenance {
     padding-right: 5px;
+  }
+  .coffee-price {
+    font-size: 20px;
+    color: main;
+
   }
 }
 

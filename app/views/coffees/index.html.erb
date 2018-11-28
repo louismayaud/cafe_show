@@ -3,31 +3,33 @@
     <h1>My coffees</h1>
 
     <div class="add_coffee">
-      <%= link_to "<i class='fas fa-plus'></i> Add a new coffee".html_safe, "coffees/new" %>
+      <%= link_to "<i class='fas fa-plus'></i> Sell a new coffee".html_safe, "coffees/new" %>
     </div>
+  <% if @coffees.count == 0 %>
+    <p> Sorry you don't have any coffee to sell at the moment </p>
+  <% else %>
+    <% @coffees.each do |coffee| %>
+      <div class="card-user">
 
-    <% if @coffees.count == 0 %>
-      <p> Sorry you don't have any coffee to sell at the moment </p>
-    <% else %>
-      <% @coffees.each do |coffee| %>
-        <div class="card-user">
-          <div class= "image">
-            <%= cl_image_tag coffee.picture, :width=>80, :crop=>"scale" %>
+        <div class= "image">
+          <%= cl_image_tag coffee.picture, :width=>80, :crop=>"scale" %>
+        </div>
+
+        <div class ="message-name">
+          <p> <%= coffee.blend_name %></p>
+        </div>
+        <div class="characteristics">
+          <div class="characteristics-name">
+            <p>intensity: </p>
+            <p>flavor: </p>
+            <p>machine: </p>
           </div>
-          <div class ="message-name">
-            <p> <%= coffee.blend_name %></p>
-          </div>
-          <div class="characteristics">
-            <div class="characteristics-name">
-              <p>intensity: </p>
-              <p>flavor: </p>
-              <p>machine: </p>
-            </div>
-            <div class="characteristics-value">
-              <p><%= coffee.intensity%></p>
-              <p><%= coffee.flavour%></p>
-              <p><%= coffee.machine%></p>
-            </div>
+          <div class="characteristics-value">
+            <p><% coffee.intensity.times do %>
+                  <i class="fas fa-coffee"></i>
+                <% end %></p>
+            <p><%= coffee.flavour%></p>
+            <p><%= coffee.machine%></p>
           </div>
           <div class ="message-description">
             <p width="50%"> <%= coffee.description %></p>
