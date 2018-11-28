@@ -14,15 +14,6 @@
           </div>
           <div class="quantity">
             <p><%= coffee.blend_name %></p>
-            <div class="col-md-6">
-                <div class="input_element_inline">
-                  <div class="input_element">
-                    <%= form_for @item, incr_quantity_path(@item) do |f| %>
-                      <%= f.submit "Update quantity" %>
-                    <% end %>
-                  </div>
-                </div>
-            </div>
           </div>
         </div>
         <div class="total-price">

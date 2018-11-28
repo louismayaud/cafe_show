@@ -52,7 +52,7 @@
               </div>
             </div>
             <div class= "edit_delete">
-              <p><%=link_to "<i class='fas fa-edit'></i>".html_safe, coffees_path%></p>
+              <p><%=link_to "<i class='fas fa-edit'></i>".html_safe, edit_coffee_path(coffee)%></p>
               <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffee_path(coffee), method: :delete %></p>
             </div>
           </div>

@@ -28,18 +28,10 @@ class PurchasesController < ApplicationController
       render :new
     end
   end
-  
+
   private
 
   def purchase_params
     params.require(:purchase).permit(:quantity, :price)
-  end
-  
-  def incr_quantity
-    @coffee = Coffee.find(params[:id])
-    # I'd probably move the increment logic into the model
-    @coffee.quantity += 1
-    @coffe.save
-    # respond to it however you want
   end
 end

@@ -1,0 +1,63 @@
+
+<div class="row container_newform">
+  <%= simple_form_for (@coffee) do |c| %>
+
+  <div class="photo_uploader col-md-3">
+    <%= c.input :picture %>
+    <%= c.input :picture_cache, as: :hidden %>
+  </div>
+
+    <% if @coffee.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @coffee.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="col-md-6">
+    <div class="input_element_inline">
+      <div class="input_element">
+        <%= c.input :blend_name, label: 'Blend Name', placeholder: 'blend_name' %>
+      </div>
+      <div class="input_element">
+        <%= c.input :tree, label: 'Arabica/Robusta', collection: ["Arabica", "Robusta"], placeholder: 'tree' %>
+      </div>
+    </div>
+
+    <div class="input_element_inline">
+      <div class="input_element">
+        <%= c.input :provenance, label: 'Country of Origin', placeholder: 'provenance' %>
+      </div>
+      <div class="input_element">
+        <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"], placeholder: 'machine' %>
+      </div>
+    </div>
+
+    <div class="input_element_inline">
+      <div class="input_element">
+      <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"], placeholder: 'flavour' %>
+      </div>
+      <div class="input_element">
+      <%= c.input :intensity, collection: ["1", "2", "3", "4", "5"], placeholder: 'intensity' %>
+      </div>
+    </div>
+
+    <div class="input_element_inline">
+      <div class="input_element">
+        <%= c.input :stock, label: 'Availability per day', placeholder: 'stock' %>
+      </div>
+      <div class="input_element">
+        <%= c.input :price_per_unit, label: 'Price', placeholder: 'price_per_unit' %>
+      </div>
+    </div>
+    <div class="input_element_btn">
+      <%= c.submit "add a coffee", class: "btn btn-primary", id: "btn_validate" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
