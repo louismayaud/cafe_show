@@ -35,11 +35,10 @@
 .information{
   width: 300px;
   display: flex;
-  text-align: left;
   justify-content: space-around;
 }
 
-.quantity{
+.blend_name{
   padding-left:10px;
   display: flex;
   text-align: right;
@@ -48,14 +47,16 @@
 
 .total-price {
   position: absolute;
-  left: 10px;
-  bottom: 10px;
+  left: 22px;
+  bottom: 15px;
   width: 83px;
   padding-top: 27px;
   text-align: center;
-  font-size: 16px;
   color: #43484D;
   font-weight: 300;
+  p {
+    font-size: 20px;
+  }
 }
 
 
@@ -70,16 +71,29 @@
   text-decoration:none;
   text-transform:uppercase;
   font-weight:400;
-  color: white;
-  background-color:#2E1E1B;
-  box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+  background-color: $font-main;
   text-align:center;
   height: 50px;
   width: 150px;
+  text-decoration: none;
+  a {
+    color: $main;
+    font-style: bolder;
+    text-decoration: none;
+  }
 }
 
-a {
-    color: white;
-    text-decoration: none;
+.validation:hover {
+  background-color: $main;
+  a {
+    color: $font-main;
+  }
 }
+
+.information-on-coffee {
+  text-align: right;
+}
+
+
+
 

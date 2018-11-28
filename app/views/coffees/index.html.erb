@@ -11,7 +11,7 @@
       <% @coffees.each do |coffee| %>
         <div class="card-user">
           <div class= "image">
-            <%= cl_image_tag coffee.picture, :width=>80, :crop=>"scale" %>
+            <%= cl_image_tag coffee.picture, :width=>80, :height=>53, :crop=> :fill %>
           </div>
 
           <div class ="message-name">
@@ -54,7 +54,7 @@
               </div>
               <div class= "edit_delete">
                 <p><%=link_to "<i class='fas fa-edit'></i>".html_safe, edit_coffee_path(coffee)%></p>
-                <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffee_path(coffee), method: :delete %></p>
+                <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffee_path(coffee), method: :delete, data: { confirm: "Are you sure?" } %></p>
               </div>
             </div>
           </div>

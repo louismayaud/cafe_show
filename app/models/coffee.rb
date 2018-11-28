@@ -1,6 +1,6 @@
 class Coffee < ApplicationRecord
   belongs_to :user
-  has_many :purchases
+  has_many :purchases, dependent: :destroy
   has_many :reviews
 
   validates :user_id, presence: true
@@ -10,7 +10,7 @@ class Coffee < ApplicationRecord
   validates :flavour, presence: true, inclusion: { in: ["Sweet", "Fruity", "Bitter", "Citric"] }
   validates :provenance, presence: true
   validates :stock, presence: true, numericality: { only_integer: true }
-  validates :blend_name, presence: true
+  validates :blend_name, presence: true, uniqueness: true
   validates :tree, presence: true, inclusion: { in: ["Arabica", "Robusta"] }
   mount_uploader :picture, PhotoUploader
 end

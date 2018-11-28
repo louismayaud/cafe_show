@@ -17,6 +17,9 @@
   text-align: center;
   margin: 50px;
   background: white;
+  p {
+    font-size: 13px;
+  }
 }
 
 .message {
@@ -27,12 +30,14 @@
 }
 
 .message-name {
-  font-size: 20px;
   text-transform: uppercase;
-  width: 120px;
+  width: 150px;
   text-align: left;
   position: relative;
-  left: -100px;
+  margin: 5px;
+  p {
+    font-size: 15px;
+  }
 }
 
 .characteristics {
@@ -41,7 +46,6 @@
   text-align:left;
   justify-content:space-around;
   position:relative;
-  left: -120px;
 }
 
 .characteristics-name{
