@@ -5,7 +5,7 @@ class Coffee < ApplicationRecord
 
   validates :user_id, presence: true
   validates :price_per_unit, presence: true, numericality: { only_float: true }
-  validates :intensity, presence: true, inclusion: { in: [0, 1, 2, 3, 4, 5] }, numericality: { only_integer: true }
+  validates :intensity, presence: true, inclusion: { in: [1, 2, 3, 4, 5] }, numericality: { only_integer: true }
   validates :machine, presence: true, inclusion: { in: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"] }
   validates :flavour, presence: true, inclusion: { in: ["Sweet", "Fruity", "Bitter", "Citric"] }
   validates :provenance, presence: true
