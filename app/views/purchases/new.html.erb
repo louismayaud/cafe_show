@@ -30,8 +30,10 @@
           </div>
         </div>
       </div>
-  </div>
-  <div class="action_button">
-    <p><%=link_to "back to the list", coffee_path(@coffee)%></p>
+    </div>
+    <div class="div-for-btn">
+      <p><%=link_to "Confirm purchase", coffee_path(@coffee), class: 'btn btn-success'%></p>
+      <p><%=link_to "Back to the list", coffee_path(@coffee), class: 'btn btn-primary'%></p>
+    </div>
   </div>
 </div>
