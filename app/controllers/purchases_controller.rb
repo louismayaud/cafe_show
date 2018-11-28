@@ -16,14 +16,14 @@ class PurchasesController < ApplicationController
 
   def create
     user = current_user
-    coffee = Coffee.find(params[:id])
-    @purchase = Purchase.new(purchase_params)
+    @coffee = Coffee.find(params[:coffee_id])
+    @purchase = Purchase.new(quantity: 1, coffee: @coffee, user: user)
     authorize @coffee
-    @purchase.user = user
-    @purchase.coffee = coffee
+    # @purchase.user = user
+    # @purchase.coffee = coffee
 
     if @purchase.save
-      redirect_to purchase_path(@purchase)
+      redirect_to purchases_path
     else
       render :new
     end
