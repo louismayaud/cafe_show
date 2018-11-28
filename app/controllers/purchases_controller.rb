@@ -10,6 +10,7 @@ class PurchasesController < ApplicationController
 
   def new
     @purchase = Purchase.new
+    authorize @purchase
   end
 
   def create

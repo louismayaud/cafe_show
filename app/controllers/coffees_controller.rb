@@ -10,6 +10,7 @@ class CoffeesController < ApplicationController
 
   def new
     @coffee = Coffee.new
+    authorize @coffee
   end
 
   def create
