@@ -1,26 +1,43 @@
-
-<div class="container">
-  <div class="card-shop">
-    <div class="title">
-      Shopping Bag
-    </div>
-    <div class="item">
-      <div class="image">
-        <img src="item-1.png" alt="" />
+<div class="wrapper">
+  <div class="container">
+    <h1>Your coffee's order is: </h1>
+    <div class="card-user">
+      <div class ="message-name">
+        <p> <%= @coffee.blend_name %></p>
       </div>
-      <div class="information">
-        <div class="description">
-          <span> name </span>
-          <span>quantity </span>
+      <div class="characteristics">
+        <div class="characteristics-name">
+          <p>intensity: </p>
+          <p>flavor: </p>
+          <p>machine: </p>
         </div>
-        <div class="quantity">
-          <p><%= 1 %></p>
-          <p><%= 1 %></p>
+        <div class="characteristics-value">
+          <p><%= @coffee.intensity%></p>
+          <p><%= @coffee.flavour%></p>
+          <p><%= @coffee.machine%></p>
         </div>
       </div>
-      <div class="total-price">price</div>
-        <p class="button">Ok</p>
+      <div class ="message-description">
+        <p width="50%"> <%= @coffee.description %></p>
       </div>
-    </div>
+      <div class = "boxes-number">
+        <div class= "title-number">
+          <p>price: </p>
+          <p>stock: </p>
+          <p>unit sold: </p>
+        </div>
+        <div class="number-number">
+          <div class ="message-price">
+            <p><%= @coffee.price_per_unit%>€</p>
+          </div>
+          <div class ="message-stock">
+            <p><%= @coffee.stock %></p>
+          </div>
+          <div class ="message-stock">
+            <p><%= @coffee.unit_sold %></p>
+          </div>
+        </div>
+      </div>
   </div>
+  <p><%=link_to "back to the list", coffee_path(@coffee)%></p>
 </div>

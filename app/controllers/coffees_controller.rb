@@ -26,9 +26,6 @@ class CoffeesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     @coffee.user = current.user
 
@@ -46,12 +43,8 @@ class CoffeesController < ApplicationController
 
   private
 
-  def set_coffee
-    @coffee = Coffee.find(params[:id])
-  end
-
   def coffee_params
-    params.require(:coffee).permit(:blend_name, :provenance, :machine, :flavour, :intensity, :stock, :price_per_unit, :tree, :photo)
+    params.require(:coffee).permit(:blend_name, :provenance, :machine, :flavour, :intensity, :stock, :price_per_unit, :tree, :picture)
   end
 
   def set_coffee

@@ -3,9 +3,12 @@
 }
 
 .card-shop {
-  position:fixed;
+  position: fixed;
+  right: 20px;
+  top: 30px;
   margin: 80px auto;
   width: 300px;
+  height: 250px;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
   border-radius: 6px;
@@ -30,22 +33,23 @@
 }
 
 .information{
-  width: 120px;
+  width: 300px;
   display: flex;
   text-align: left;
   justify-content: space-around;
 }
 
 .quantity{
+  padding-left:10px;
   display: flex;
   text-align: right;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
 .total-price {
-  position: relative;
-  bottom: -50px;
-  right: 145px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
   width: 83px;
   padding-top: 27px;
   text-align: center;
@@ -55,18 +59,27 @@
 }
 
 
-.button{
+.validation{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
   display:inline-block;
- padding:0.7em 1.4em;
- margin:0 0.3em 0.3em 0;
- border-radius:0.15em;
- text-decoration:none;
- text-transform:uppercase;
- font-weight:400;
- color:#FFFFFF;
- background-color:#3369ff;
- box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
- text-align:center;
+  padding:0.7em 1.4em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.15em;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-weight:400;
+  color: white;
+  background-color:#2E1E1B;
+  box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+  text-align:center;
+  height: 50px;
+  width: 150px;
 }
 
+.validation:hover {
+  color:white;
+  text-decoration: none;
+}
 

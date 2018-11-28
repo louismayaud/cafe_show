@@ -1,0 +1,36 @@
+  <div class="container">
+    <div class="card-shop">
+      <div class="title">
+        <p> Shopping Bag</p>
+      </div>
+      <div class="item">
+        <div class="image">
+          <img src="item-1.png" alt="" />
+        </div>
+        <div class="information">
+          <div class="description">
+            <span> name </span>
+            <span>quantity </span>
+          </div>
+          <div class="quantity">
+            <p><%= coffee.blend_name %></p>
+            <div class="col-md-6">
+                <div class="input_element_inline">
+                  <div class="input_element">
+                    <%= form_for @item, incr_quantity_path(@item) do |f| %>
+                      <%= f.submit "Update quantity" %>
+                    <% end %>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="total-price">
+          <p><%= coffee.price_per_unit %>€</p>
+        </div>
+        <div class="validation">
+          <p><%=link_to "Checkout", new_coffee_purchase_path(coffee)%></p>
+        </div>
+      </div>
+    </div>
+  </div>
