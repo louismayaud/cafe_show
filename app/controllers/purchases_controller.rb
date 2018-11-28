@@ -31,4 +31,13 @@ class PurchasesController < ApplicationController
   def purchase_params
     params.require(:purchase).permit(:quantity, :price)
   end
+
+  def incr_quantity
+    @item = Item.find(params[:id])
+    # I'd probably move the increment logic into the model
+    @item.quantity += 1
+    @item.save
+    # respond to it however you want
+  end
+
 end

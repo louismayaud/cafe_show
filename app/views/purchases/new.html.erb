@@ -1,6 +1,15 @@
 <div class="wrapper">
   <div class="container">
     <h1>Your coffees' order is: </h1>
+  </div>
 
+  <div class="col-md-6">
+      <div class="input_element_inline">
+        <div class="input_element">
+          <%= form_for @item, incr_quantity_path(@item) do |f| %>
+            <%= f.submit "Update quantity" %>
+          <% end %>
+        </div>
+      </div>
   </div>
 </div>
