@@ -26,6 +26,12 @@ COMPANY_PUBLIC_IDS = [
   "logo_alchimiste", "logo-belleville", "logo_comiteducafe"
 ]
 
+URL = [
+  "https://media.istockphoto.com/photos/coffee-bean-picture-id466732980?k=6&m=466732980&s=612x612&w=0&h=7NyhAw5KS3EJECcJPOHgSqZffX2RFCAU_92ydPr8iZU=",
+  "https://cpb-us-w2.wpmucdn.com/u.osu.edu/dist/e/13119/files/2015/04/Coffeebeanz-txuhmf.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6f_T2lY0zKDRIBBlChMRhoJxrY9nsVwBkGkC8txotYwidda8p",
+]
+
 def fetch_coffee_images(coffee)
   resource = Cloudinary::Api.resource(COFFEE_PUBLIC_IDS.sample)
   public_id = resource["public_id"]
@@ -33,6 +39,7 @@ def fetch_coffee_images(coffee)
   format = resource["format"]
   image = "v#{version}/#{public_id}.#{format}"
   coffee.picture = image
+
 end
 
 def fetch_avatar_images(user)
@@ -81,9 +88,9 @@ puts 'Creating 10 fake coffees from rodrigue'
     description: Faker::Coffee.notes
 )
   coffee.user = rodrigue
-  fetch_coffee_images(coffee)
-  # ap coffee
-  coffee.save!
+  coffee.remote_picture_url = URL.sample
+  # fetch_coffee_images(coffee)
+  coffee.save
 end
 
 puts "create a seller Louis"
@@ -114,9 +121,9 @@ puts 'Creating 10 fake coffees from Louis'
     description: Faker::Coffee.notes
 )
   coffee.user = louis
-  fetch_coffee_images(coffee)
-  # ap coffee
-  coffee.save!
+  coffee.remote_picture_url = URL.sample
+  # fetch_coffee_images(coffee)
+  coffee.save
 end
 
 puts "create a buyer Sacha"
