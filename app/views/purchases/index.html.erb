@@ -3,8 +3,8 @@
     <h1>My previous purchases</h1>
     <div class="card-container">
       <% @purchases.each do |purchase| %>
-        <div class="coffee-card">
-          <%= link_to root_path do %>
+<!--         <div class="coffee-card">
+          <%#= link_to root_path do %>
           <div class="coffee-card-main">
             <%= purchase.coffee.blend_name.capitalize %>
             <div class="coffee-tree">
@@ -31,8 +31,49 @@
               </div>
             </div>
           </div>
-          <% end %>
+          <%# end %>
+        </div> -->
+
+
+        <div class="coffee-card">
+
+          <div class="coffee-card-main" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)),
+         url('<%= cl_image_path purchase.coffee.picture, height: 300, width: 400, crop: :fill %>')">
+            <div class="coffee-blend-name">
+              <%= purchase.coffee.blend_name.capitalize %>
+            </div>
+            <div class="coffee-user">
+              <%= cl_image_tag purchase.coffee.user.avatar, :width=>70, :crop=>"scale" %>
+            </div>
+          </div>
+          <div class="coffee-card-footer">
+            <div class="coffee-caracteristics">
+              <ul>
+                <li>
+                  Intensity:
+                  <% purchase.coffee.intensity.times do %>
+                    <i class="fas fa-coffee"></i>
+                  <% end %>
+                </li>
+                <li>Perfect for: <%= purchase.coffee.machine %> </li>
+                <li>Flavour: <%= purchase.coffee.flavour %> </li>
+              </ul>
+            </div>
+            <div class="coffee-footer-price-and-provenance">
+              <div class="coffee-price">
+                <p><%= purchase.coffee.price_per_unit %> €</p>
+              </div>
+              <div class="coffee-provenance">
+                <%= purchase.coffee.provenance.split(' ').last %>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+
+
+
       <% end %>
     </div>
   </div>

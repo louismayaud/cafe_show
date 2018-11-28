@@ -20,7 +20,7 @@ class CoffeesController < ApplicationController
     @coffee.user = current_user
 
     if @coffee.save
-      redirect_to root_path
+      redirect_to coffees_path
     else
       render :new
     end
@@ -42,8 +42,9 @@ class CoffeesController < ApplicationController
   end
 
   def destroy
+    authorize @coffee
     @coffee.destroy
-    redirect_to coffee_path
+    redirect_to coffees_path
   end
 
   private

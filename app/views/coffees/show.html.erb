@@ -4,33 +4,38 @@
     <h2>Presentation of <%= @coffee.blend_name %></h2>
     <div class="coffee-caracteristics">
       <div class="coffee-show-picture">
-        <%= cl_image_tag @coffee.picture, :width=>200, :crop=>"scale"%>
+        <%= cl_image_tag @coffee.picture, :width=>200, height: 120, :crop=> :fill%>
+        <% if @coffee.description%>
         <p><em><%= @coffee.description.capitalize %></em></p>
+        <% end %>
       </div>
-      <ul>
-        <li>Intensity:
-          <% @coffee.intensity.times do %>
-            <i class="fas fa-coffee"></i>
-          <% end %>
-        </li>
-        <li>Best for: <%= @coffee.machine %> </li>
-        <li>Flavour: <%= @coffee.flavour %> </li>
-        <li>Tree: <%= @coffee.tree %> </li>
-        <li>Provenance: <%= @coffee.provenance %> </li>
-        <li>
-          <div class="coffee-show-price">
-            <strong><%= @coffee.price_per_unit %> €</strong> for 500 gr.
-          </div>
-        </li>
-      </ul>
+      <br>
+      <div class="presentation-of-coffee">
+        <ul>
+          <li>Intensity:
+            <% @coffee.intensity.times do %>
+              <i class="fas fa-coffee"></i>
+            <% end %>
+          </li>
+          <li>Best for: <%= @coffee.machine %> </li>
+          <li>Flavour: <%= @coffee.flavour %> </li>
+          <li>Tree: <%= @coffee.tree %> </li>
+          <li>Provenance: <%= @coffee.provenance %> </li>
+          <li>
+            <div class="coffee-show-price">
+              <strong><%= @coffee.price_per_unit %> €</strong> for 500 gr.
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <br>
-    <br>
     <div class="coffee-show-roaster">
-      <h3>Meet <%= @coffee.user.name %>, the producer of <%= @coffee.blend_name %></h2>
+      <h3>Meet <strong><%= @coffee.user.name %></strong>, the producer of <em><%= @coffee.blend_name %></em></h2>
       <div class="roaster-description">
-        <p><%= @coffee.user.introduction %></p>
+        <%= cl_image_tag @coffee.user.avatar, :width=>200, :crop=>"scale"%>
+        <%= @coffee.user.introduction %>
       </div>
     </div>
   </div>

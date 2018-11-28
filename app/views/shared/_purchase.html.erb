@@ -4,21 +4,24 @@
         <p> Shopping Bag</p>
       </div>
       <div class="item">
-        <div class="image">
-          <img src="item-1.png" alt="" />
-        </div>
+
         <div class="information">
           <div class="description">
-            <span> name </span>
-            <span>quantity </span>
+            <p>Name : </p>
+            <p>in-stock : </p>
           </div>
-          <div class="quantity">
-            <p><%= coffee.blend_name %></p>
+          <div class="information-on-coffee">
+            <div class="blend">
+              <p><%= coffee.blend_name %></p>
+            </div>
+            <div class="in-stock">
+              <p><%= coffee.stock %></p>
+            </div>
           </div>
         </div>
-        <div class="total-price">
-          <p><%= coffee.price_per_unit %>€</p>
-        </div>
+          <div class="total-price">
+            <p><%= coffee.price_per_unit %>€</p>
+          </div>
         <div class="validation">
           <p><%=link_to "Checkout", new_coffee_purchase_path(coffee)%></p>
         </div>
