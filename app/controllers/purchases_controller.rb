@@ -11,6 +11,7 @@ class PurchasesController < ApplicationController
   def new
     @purchase = Purchase.new
     authorize @purchase
+    @coffee = Coffee.find(params[:coffee_id])
   end
 
   def create
@@ -30,5 +31,9 @@ class PurchasesController < ApplicationController
 
   def purchase_params
     params.require(:purchase).permit(:quantity, :price)
+  end
+
+  def purchase_coffee_params
+    params.require(:purchase).permit(:coffee_id)
   end
 end
