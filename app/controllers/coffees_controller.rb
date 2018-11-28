@@ -46,8 +46,4 @@ class CoffeesController < ApplicationController
   def coffee_params
     params.require(:coffee).permit(:blend_name, :provenance, :machine, :flavour, :intensity, :stock, :price_per_unit, :tree, :picture)
   end
-
-  def set_coffee
-    @coffee = Coffee.find(params[:id])
-  end
 end

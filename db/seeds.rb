@@ -17,7 +17,7 @@ User.destroy_all
 #
  # pictures = Cloudinary::Api.resources["resources"]
 COFFEE_PUBLIC_IDS = [
-  "cafe_grainandlabel", "coffee_cup_served", "coffee_filter"
+  "coffee_cup3", "coffee_cup2", "coffee_cup4"
 ]
 AVATAR_PUBLIC_IDS = [
   "avatar_Saunier", "avatar_louism", "avatar_moss"
