@@ -26,6 +26,9 @@ class CoffeesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     @coffee.user = current.user
 
