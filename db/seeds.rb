@@ -11,8 +11,8 @@ require "cloudinary"
 require 'awesome_print'
 puts "Destroying users and coffees"
 
-User.destroy_all
 Purchase.destroy_all
+User.destroy_all
 # puts "fetch public ids from cloudinary"
 #
  # pictures = Cloudinary::Api.resources["resources"]
