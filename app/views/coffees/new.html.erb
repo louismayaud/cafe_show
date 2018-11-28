@@ -1,12 +1,11 @@
 
 <div class="row container_newform">
-  <div class="photo_uploader col-md-3">
-  <%= simple_form_for(@coffee) do |f| %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-  <% end %>
-  </div>
   <%= simple_form_for (@coffee) do |c| %>
+
+  <div class="photo_uploader col-md-3">
+    <%= c.input :picture %>
+    <%= c.input :picture_cache, as: :hidden %>
+  </div>
 
     <% if @coffee.errors.any? %>
       <div class="errors-container">
