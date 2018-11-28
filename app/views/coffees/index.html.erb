@@ -5,55 +5,57 @@
     <div class="add_coffee">
       <%= link_to "<i class='fas fa-plus'></i> Sell a new coffee".html_safe, "coffees/new" %>
     </div>
-  <% if @coffees.count == 0 %>
-    <p> Sorry you don't have any coffee to sell at the moment </p>
-  <% else %>
-    <% @coffees.each do |coffee| %>
-      <div class="card-user">
-
-        <div class= "image">
-          <%= cl_image_tag coffee.picture, :width=>80, :crop=>"scale" %>
-        </div>
-
-        <div class ="message-name">
-          <p> <%= coffee.blend_name %></p>
-        </div>
-        <div class="characteristics">
-          <div class="characteristics-name">
-            <p>intensity: </p>
-            <p>flavor: </p>
-            <p>machine: </p>
+    <% if @coffees.count == 0 %>
+      <p> Sorry you don't have any coffee to sell at the moment </p>
+    <% else %>
+      <% @coffees.each do |coffee| %>
+        <div class="card-user">
+          <div class= "image">
+            <%= cl_image_tag coffee.picture, :width=>80, :crop=>"scale" %>
           </div>
-          <div class="characteristics-value">
-            <p><% coffee.intensity.times do %>
+
+          <div class ="message-name">
+            <p> <%= coffee.blend_name %></p>
+          </div>
+          <div class="characteristics">
+            <div class="characteristics-name">
+              <p>intensity: </p>
+              <p>flavor: </p>
+              <p>machine: </p>
+            </div>
+            <div class="characteristics-value">
+              <p>
+                <% coffee.intensity.times do %>
                   <i class="fas fa-coffee"></i>
-                <% end %></p>
-            <p><%= coffee.flavour%></p>
-            <p><%= coffee.machine%></p>
-          </div>
-          <div class ="message-description">
-            <p width="50%"> <%= coffee.description %></p>
-          </div>
-          <div class = "boxes-number">
-            <div class= "title-number">
-              <p>price: </p>
-              <p>stock: </p>
-              <p>unit sold: </p>
+                <% end %>
+              </p>
+              <p><%= coffee.flavour%></p>
+              <p><%= coffee.machine%></p>
             </div>
-            <div class="number-number">
-              <div class ="message-price">
-                <p><%= coffee.price_per_unit%>€</p>
-              </div>
-              <div class ="message-stock">
-                <p><%= coffee.stock %></p>
-              </div>
-              <div class ="message-stock">
-                <p><%= coffee.unit_sold %></p>
-              </div>
+            <div class ="message-description">
+              <p width="50%"> <%= coffee.description %></p>
             </div>
-            <div class= "edit_delete">
-              <p><%=link_to "<i class='fas fa-edit'></i>".html_safe, edit_coffee_path(coffee)%></p>
-              <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffee_path(coffee), method: :delete %></p>
+            <div class = "boxes-number">
+              <div class= "title-number">
+                <p>price: </p>
+                <p>stock: </p>
+                <p>unit sold: </p>
+              </div>
+              <div class="number-number">
+                <div class ="message-price">
+                  <p><%= coffee.price_per_unit%>€</p>
+                </div>
+                <div class ="message-stock">
+                  <p><%= coffee.stock %></p>
+                </div>
+                <div class ="message-stock">
+                  <p><%= coffee.unit_sold %></p>
+                </div>
+              </div>
+              <div class= "edit_delete">
+                <p><%=link_to "<i class='fas fa-edit'></i>".html_safe, edit_coffee_path(coffee)%></p>
+                <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffee_path(coffee), method: :delete %></p>
+              </div>
             </div>
           </div>
         </div>
