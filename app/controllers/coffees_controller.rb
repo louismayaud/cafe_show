@@ -1,14 +1,16 @@
 class CoffeesController < ApplicationController
   before_action :set_coffee, only: [:edit, :show, :update, :destroy]
   def index
-    @coffees = Coffee.where(user: current_user)
+    @coffees = policy_scope(Coffee).order(created_at: :desc)
   end
 
   def show
+    authorize @coffee
   end
 
   def new
     @coffee = Coffee.new
+    authorize @coffee
   end
 
   def create
