@@ -1,18 +1,19 @@
 <%= render "shared/purchase", coffee: @coffee %>
 <div class="wrapper">
   <div class="container">
-    <h1>Dicsover the coffee</h1>
-    <h2>Drink <%= @coffee.blend_name %></h2>
+    <h1>Dicsover the coffee <%= @coffee.blend_name %></h2>
     <div class="coffee-caracteristics">
       <ul>
-        <li>Intensity: <%= @coffee.intensity %></li>
+        <li>Intensity: <% @coffee.intensity.times do %>
+            <i class="fas fa-coffee"></i>
+          <% end %></li>
         <li>Best for: <%= @coffee.machine %> </li>
         <li>Flavour: <%= @coffee.flavour %> </li>
         <li>Tree: <%= @coffee.tree %> </li>
         <li>Provenance: <%= @coffee.provenance %> </li>
+        <li><div class="coffee-show-price"><%= @coffee.price_per_unit %> € for 500 gr.
+        </div></li>
       </ul>
-    </div>
-    <div class="coffee-show-price"><%= @coffee.price_per_unit %> € for 500 gr.
     </div>
     <div class="coffee-show-picture">
       <%= cl_image_tag @coffee.picture, :width=>200, :crop=>"scale"%>
