@@ -7,9 +7,11 @@
   <% else %>
     <% @coffees.each do |coffee| %>
       <div class="card-user">
+
         <div class= "image">
           <%= cl_image_tag coffee.picture, :width=>80, :crop=>"scale" %>
         </div>
+
         <div class ="message-name">
           <p> <%= coffee.blend_name %></p>
         </div>
@@ -20,7 +22,9 @@
             <p>machine: </p>
           </div>
           <div class="characteristics-value">
-            <p><%= coffee.intensity%></p>
+            <p><% coffee.intensity.times do %>
+                  <i class="fas fa-coffee"></i>
+                <% end %></p>
             <p><%= coffee.flavour%></p>
             <p><%= coffee.machine%></p>
           </div>

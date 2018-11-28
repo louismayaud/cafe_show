@@ -5,21 +5,26 @@
     <% @coffees.each do |coffee| %>
       <div class="coffee-card">
         <%= link_to coffee_path(coffee) do %>
-        <div class="coffee-card-main">
-          <%= coffee.blend_name.capitalize %>
-          <div class="coffee-tree">
-            <%= coffee.tree.capitalize %>
+        <div class="coffee-card-main" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path coffee.picture, height: 300, width: 400, crop: :fill %>')">
+          <div class="coffee-blend-name">
+            <%= coffee.blend_name.capitalize %>
           </div>
-          <div class="coffee user">
-            <%= cl_image_tag coffee.user.avatar, :width=>80, :crop=>"scale" %>
+          <div class="coffee-user">
+            <%= cl_image_tag coffee.user.avatar, :width=>70, :crop=>"scale" %>
           </div>
         </div>
         <div class="coffee-card-footer">
           <div class="coffee-caracteristics">
             <ul>
-              <li>Intensity : <%= coffee.intensity %></li>
-              <li><%= coffee.machine %> </li>
-              <li><%= coffee.flavour %> </li>
+              <li>
+                Intensity:
+                <% coffee.intensity.times do %>
+                  <i class="fas fa-coffee"></i>
+                <% end %>
+              </li>
+              <li>Perfect for: <%= coffee.machine %> </li>
+              <li>Flavour: <%= coffee.flavour %> </li>
             </ul>
           </div>
           <div class="coffee-footer-price-and-provenance">
@@ -27,7 +32,7 @@
               <p><%= coffee.price_per_unit %> €</p>
             </div>
             <div class="coffee-provenance">
-              <%= coffee.provenance %>
+              <%= coffee.provenance.split(' ').last %>
             </div>
           </div>
         </div>
