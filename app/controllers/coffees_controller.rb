@@ -6,6 +6,7 @@ class CoffeesController < ApplicationController
 
   def show
     authorize @coffee
+    @review = Review.new
   end
 
   def new

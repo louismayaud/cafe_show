@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="container">
+
+    <div class="new-review">
+      <h3>Edit your review to <strong><%= @review.coffee.blend_name %></strong></h3>
+      <%= simple_form_for (@review) do |c| %>
+
+        <% if @review.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @review.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="col-md-2">
+            <div class="input_element">
+              <%= c.input :rating, collection: [1, 2, 3, 4, 5] %>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <div class="input-element">
+              <%= c.input :content, label: 'Comment' %>
+            </div>
+          </div>
+          <div class="review-submit">
+            <%= c.submit "Edit your review", class: "btn btn-primary submit-new-review" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>
