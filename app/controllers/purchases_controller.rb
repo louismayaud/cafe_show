@@ -23,6 +23,9 @@ class PurchasesController < ApplicationController
     # @purchase.coffee = coffee
 
     if @purchase.save
+      @coffee.stock -= 1
+      @coffee.unit_sold += 1
+      @coffee.save
       redirect_to purchases_path
     else
       render :new

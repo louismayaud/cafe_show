@@ -1,3 +1,38 @@
 .text-body{
   margin-right: 350px;
 }
+#box-stock{
+  width: 100px;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  p {
+    font-size: 15px;
+  }
+}
+
+#box-price {
+  width: 150px;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  p {
+    font-size: 20px;
+  }
+}
+
+#delete {
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  p {
+    font-size: 20px;
+  }
+}
+

@@ -1,36 +1,50 @@
 <div class="wrapper">
   <div class="container">
     <h1>Your coffee's order is: </h1>
-    <div class="card-user">
-      <div class ="message-name">
-        <p> <%= @coffee.blend_name %></p>
-      </div>
-      <div class="characteristics">
-        <div class="characteristics-name">
-          <p>intensity: </p>
-          <p>flavor: </p>
-          <p>machine: </p>
+      <div class="card-user">
+        <div class= "image">
+          <%= cl_image_tag @coffee.picture, :width=>80, :height=>53, :crop=> :fill %>
         </div>
-        <div class="characteristics-value">
-          <p><%= @coffee.intensity%></p>
-          <p><%= @coffee.flavour%></p>
-          <p><%= @coffee.machine%></p>
+
+        <div class ="message-name">
+          <p> <%= @coffee.blend_name %></p>
         </div>
-      </div>
-      <div class ="message-description">
-        <p width="50%"> <%= @coffee.description %></p>
-      </div>
-      <div class = "boxes-number">
-        <div class= "title-number">
-          <p>price: </p>
-        </div>
-        <div class="number-number">
-          <div class ="message-price">
-            <p><%= @coffee.price_per_unit%>€</p>
+        <div class="characteristics">
+          <div class="characteristics-name">
+            <p>intensity: </p>
+            <p>flavor: </p>
+            <p>machine: </p>
+          </div>
+          <div class="characteristics-value">
+            <p> <%= @coffee.intensity.capitalize %></p>
+            <p><%= @coffee.flavour%></p>
+            <p><%= @coffee.machine%></p>
+          </div>
+          <div class ="message-description">
+            <p width="50%"> <%= @coffee.description %></p>
+          </div>
+            <div id="box-stock">
+              <div id="stock">
+                <p>stock: </p>
+              </div>
+              <div id ="message-stock">
+                <p><%= @coffee.stock %></p>
+              </div>
+            </div>
+            <div id = "box-price">
+              <div id= "price">
+                <p>price: </p>
+              </div>
+              <div id ="message-price">
+                <p><%= @coffee.price_per_unit%>€</p>
+              </div>
+            </div>
+            <div id= "delete">
+            <p><%=link_to "<i class='fas fa-trash-alt'></i>".html_safe, coffee_path(@coffee), method: :delete, data: { confirm: "Are you sure?" } %>
+            </p>
           </div>
         </div>
       </div>
-    </div>
     <div class="div-for-btn">
       <p><%=link_to "Confirm purchase", coffee_purchases_path(@coffee), method: :post, class: 'btn btn-success'%></p>
       <p><%=link_to "Back to the list", coffee_path(@coffee), class: 'btn btn-primary'%></p>
