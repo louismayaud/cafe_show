@@ -1,4 +1,5 @@
 <%= render "shared/purchase", coffee: @coffee %>
+
 <div class="wrapper">
   <div class="container">
     <h2>Presentation of <%= @coffee.blend_name %></h2>
@@ -28,11 +29,90 @@
 
     <br>
     <div class="coffee-show-roaster">
-      <h3>Meet <strong><%= @coffee.user.name %></strong>, the producer of <em><%= @coffee.blend_name %></em></h2>
+      <h3>Meet <strong><%= @coffee.user.name %></strong>, the producer of <em><%= @coffee.blend_name %></em></h3>
       <div class="roaster-description">
         <%= cl_image_tag @coffee.user.avatar, :width=>200, :crop=>"scale"%>
         <%= @coffee.user.introduction %>
       </div>
     </div>
+
+    <br>
+    <div class="coffee-reviews">
+      <h4>List of reviews</h4>
+      <ul class= "coffee-reviews-inbox">
+      <% @coffee.reviews.each do |review| %>
+        <li class="review-card">
+            <%= cl_image_tag review.user.avatar, :width=>50, :crop=>"scale", class: "avatar"%>
+            <div class="review-creation">
+              <div class="review-user">
+                <p><strong><%= review.user.name %></strong></p>
+              </div>
+              <div class="review-last-modification">
+                <% if review.created_at == review.updated_at %>
+                  <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
+                <% else %>
+                  <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
+                  <p><em>Modified the <%= review.updated_at.strftime("%d/%m/%Y") %></em></p>
+                <% end %>
+              </div>
+            </div>
+            <div class="review-content-rating">
+              <div class="review-rating">
+                <ul class="list-inline golden">
+                  <% review.rating.times do %>
+                    <li><i class="fas fa-coffee"></i></li>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="review-content">
+                <p><%= review.content %></p>
+              </div>
+            </div>
+            <div class="review-edition">
+              <% if review.user == current_user %>
+                <%= link_to "<i class='fas fa-edit'></i>".html_safe, edit_review_path(review) %>
+              <% end %>
+            </div>
+        </li>
+
+      <% end %>
+      </ul>
+
+      <% if (@coffee.reviews.select { |review| review.user == current_user }).empty? %>
+        <div class="new-review">
+          <%= simple_form_for (@review) do |c| %>
+
+            <% if @review.errors.any? %>
+              <div class="errors-container">
+                <ul>
+                  <% @review.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="row">
+              <div class="col-md-2">
+                <div class="input_element">
+                  <%= c.input :rating, collection: [1, 2, 3, 4, 5] %>
+                </div>
+              </div>
+              <div class="col-md-10">
+                <div class="input-element">
+                  <%= c.input :content, label: 'Add a comment' %>
+                </div>
+              </div>
+              <div class="review-submit-new">
+                <%= c.submit "Add a review", class: "btn btn-primary submit-new-review" %>
+              </div>
+            </div>
+
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+
   </div>
 </div>

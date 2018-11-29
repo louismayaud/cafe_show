@@ -27,11 +27,15 @@
               </ul>
             </div>
             <div class="coffee-footer-price-and-provenance">
-              <div class="coffee-price">
-                <p>Total: <%= purchase.coffee.price_per_unit %> €</p>
+              <div class="coffee-total-price">
+                <p>Total: <strong><%= purchase.coffee.price_per_unit %>€</strong></p>
               </div>
-              <div class="coffee-provenance">
-                Add a review
+              <div class="coffee-add-edit-review">
+                <% if (purchase.coffee.reviews.select { |review| review.user == current_user }).empty? %>
+                  <strong><%= link_to "Add a review", new_review_path(purchase.coffee), id: "add-review-btn" %></strong>
+                <% else %>
+                  <strong><%= link_to "Edit my review", edit_review_path((purchase.coffee.reviews.select { |review| review.user == current_user }).first), id: "edit-review-btn" %></strong>
+                <% end %>
               </div>
             </div>
           </div>

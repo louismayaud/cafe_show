@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  resources :reviews, only: [:edit, :update]
   resources :purchases, only: [:index, :show]
   resources :pages, only: [:index]
 end
