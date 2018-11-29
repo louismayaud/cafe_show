@@ -11,7 +11,7 @@ class Coffee < ApplicationRecord
   validates :provenance, presence: true
   validates :stock, presence: true, numericality: { only_integer: true }
   validates :blend_name, presence: true, uniqueness: true
-  validates :tree, presence: true, inclusion: { in: ["Arabica", "Robusta"] }
+  validates :tree, presence: true, inclusion: { in: ["Arabica", "Robusta", "Blend"] }
   mount_uploader :picture, PhotoUploader
 
   include PgSearch
