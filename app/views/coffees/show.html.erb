@@ -12,11 +12,7 @@
       <br>
       <div class="presentation-of-coffee">
         <ul>
-          <li>Intensity:
-            <% @coffee.intensity.times do %>
-              <i class="fas fa-coffee"></i>
-            <% end %>
-          </li>
+          <li>Drink during: <%= @coffee.intensity.capitalize %></li>
           <li>Best for: <%= @coffee.machine %> </li>
           <li>Flavour: <%= @coffee.flavour %> </li>
           <li>Tree: <%= @coffee.tree %> </li>

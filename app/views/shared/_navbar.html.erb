@@ -13,6 +13,7 @@
       <%= link_to "Buy", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% if current_user.coffees.count == 0 %>
         <%= link_to "My purchases", purchases_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Start selling", coffees_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
         <%= link_to "My sales", coffees_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "My purchases", purchases_path, class: "navbar-wagon-item navbar-wagon-link" %>
