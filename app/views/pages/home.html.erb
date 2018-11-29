@@ -17,12 +17,7 @@
         <div class="coffee-card-footer">
           <div class="coffee-caracteristics">
             <ul>
-              <li>
-                Intensity:
-                <% coffee.intensity.times do %>
-                  <i class="fas fa-coffee"></i>
-                <% end %>
-              </li>
+              <li>Drink during: <%= coffee.intensity %></li>
               <li>Perfect for: <%= coffee.machine %> </li>
               <li>Flavour: <%= coffee.flavour %> </li>
             </ul>
