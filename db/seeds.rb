@@ -77,7 +77,7 @@ puts 'Creating 10 fake coffees from rodrigue'
 10.times do
   coffee = Coffee.new(
     price_per_unit: rand(15..40),
-    intensity: rand(1..5),
+    intensity: ["morning", "noon", "night"].sample,
     machine: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"].sample,
     flavour: ["Sweet", "Fruity", "Bitter", "Citric"].sample,
     provenance: Faker::Coffee.origin,
@@ -110,7 +110,7 @@ puts 'Creating 10 fake coffees from Louis'
 10.times do
   coffee = Coffee.new(
     price_per_unit: rand(15..40),
-    intensity: rand(1..5),
+    intensity: ["morning", "noon", "night"].sample,
     machine: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"].sample,
     flavour: ["Sweet", "Fruity", "Bitter", "Citric"].sample,
     provenance: Faker::Coffee.origin,
