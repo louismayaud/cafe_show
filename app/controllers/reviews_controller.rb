@@ -7,14 +7,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    coffee = Coffee.find(params[:id])
+    @coffee = Coffee.find(params[:id])
     @review = Review.new(review_params)
     authorize @review
     @review.user = current_user
-    @review.coffee = coffee
+    @review.coffee = @coffee
 
     if @review.save
-      redirect_to coffee_path(coffee)
+      redirect_to coffee_path(@coffee)
     else
       render :new
     end
@@ -27,10 +27,10 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.update(review_params)
+    @review = Review.find(params[:id])
     authorize @review
 
-    if @review.save
+    if @review.update(review_params)
       redirect_to coffee_path(@review.coffee)
     else
       render :edit
