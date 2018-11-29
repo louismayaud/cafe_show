@@ -13,4 +13,11 @@ class Coffee < ApplicationRecord
   validates :blend_name, presence: true, uniqueness: true
   validates :tree, presence: true, inclusion: { in: ["Arabica", "Robusta"] }
   mount_uploader :picture, PhotoUploader
+
+  include PgSearch
+  pg_search_scope :search_by_machine_and_intensity,
+    against: [:machine, :intensity],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
