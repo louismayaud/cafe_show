@@ -1,9 +1,9 @@
+
 <div class="wrapper">
   <div class="container">
-    <h1>My coffees</h1>
-
     <div class="add_coffee">
-      <%= link_to "<i class='fas fa-plus'></i> Sell a new coffee".html_safe, "coffees/new" %>
+       <h1>My coffees</h1>
+      <%= link_to "Sell a new coffee".html_safe, "coffees/new", class: "add_coffee_btn" %>
     </div>
     <% if @coffees.count == 0 %>
       <p> Sorry you don't have any coffee to sell at the moment </p>
