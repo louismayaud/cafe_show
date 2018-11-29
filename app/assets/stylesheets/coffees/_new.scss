@@ -3,14 +3,31 @@
   padding-top: 10px;
 }
 
-.add_coffee {
-  text-align: right;
-  text-decoration: none;
-  font-size: 25px;
+.add_coffee_btn {
+  padding: 16px;
+  background-color: #D6C9BE;
+  border-radius: 32px;
+  color: $main;
 }
 
-.add_coffee:hover{
+.add_coffee_btn:hover {
   text-decoration: none;
+  color: #D6C9BE;
+  background-color: $main;
+}
+
+.add_coffee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  margin: 0px 50px;
+    h1 {
+      color: $main;
+      margin: 0px;
+      text-shadow: 2px 1px 3px rgba(0,0,0,0.1);
+
+    }
 }
 
 .card-user {
@@ -21,6 +38,8 @@
   text-align: center;
   margin: 50px;
   background: white;
+  border-radius: 10px;
+  box-shadow: 1px 2px 6px $main;
   p {
     font-size: 13px;
   }
