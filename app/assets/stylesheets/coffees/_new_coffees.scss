@@ -1,15 +1,48 @@
+#hide input[type=file] {
+display:none;
+margin:10px;
+}
+
+#hide input[type=file] + label {
+display:inline-block;
+margin:20px;
+padding: 4px 32px;
+background-color: #FFFFFF;
+border:solid 1px #666F77;
+border-radius: 6px;
+color:#666F77;
+}
+#hide input[type=file]:active + label {
+background-image: none;
+background-color:#2D6C7A;
+color:#FFFFFF;
+}
+
+.photo_text.hidden-xs:hover {
+  cursor: pointer;
+}
+
 .input_element_inline {
   display: flex;
   justify-content: flex-end;
 }
 
-.input_element {
-  width: 100%;
-  padding: 10px;
+.end-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px;
 }
 
-.container_newform {
-  margin: 10px;
+.form-group {
+  margin: 0px;
+}
+
+.input_element {
+  width: 100%;
+  padding: 4px;
+  font-size: 16px;
+  font-family: "Raleway";
 }
 
 .input_element_btn {
@@ -22,8 +55,12 @@
   margin: 10px;
 }
 
-.photo_uploader.col-md-3 {
-  display: flex;
-  justify-content: align-items;
+.start-new-coffee-form {
+  border: 1px solid $main;
+  padding: 10px;
+  padding-bottom: 0px;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
+
+

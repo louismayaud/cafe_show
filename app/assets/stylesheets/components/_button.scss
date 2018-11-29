@@ -1,13 +1,26 @@
-.button {
- display:inline-block;
- padding:0.7em 1.4em;
- margin:0 0.3em 0.3em 0;
- border-radius:0.15em;
- text-decoration:none;
- text-transform:uppercase;
- font-weight:400;
- color:#FFFFFF;
- background-color:#3369ff;
- box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
- text-align:center;
+// .button {
+//  display:inline-block;
+//  padding:0.7em 1.4em;
+//  margin:0 0.3em 0.3em 0;
+//  border-radius:0.15em;
+//  text-decoration:none;
+//  text-transform:uppercase;
+//  font-weight:400;
+//  color:#FFFFFF;
+//  background-color:#3369ff;
+//  box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+//  text-align:center;
+// }
+
+.add_coffee_btn {
+  padding: 16px;
+  background-color: #D6C9BE;
+  border-radius: 32px;
+  color: $main;
+}
+
+.add_coffee_btn:hover {
+  text-decoration: none;
+  color: #D6C9BE;
+  background-color: $main;
 }
