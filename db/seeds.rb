@@ -89,7 +89,7 @@ puts 'Creating 10 fake coffees from rodrigue'
 )
   coffee.user = rodrigue
   coffee.remote_picture_url = URL.sample
-  # fetch_coffee_images(coffee)
+  # fetch_coffee_images(coffee)r
   coffee.save
 end
 
