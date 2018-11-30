@@ -9,9 +9,13 @@
 require 'faker'
 require "cloudinary"
 require 'awesome_print'
-puts "Destroying users and coffees"
+puts "Destroying instances"
 
+puts "Destroying purchases"
 Purchase.destroy_all
+puts "Destroying reviews"
+Review.destroy_all
+puts "Destroying users and coffees"
 User.destroy_all
 # puts "fetch public ids from cloudinary"
 #

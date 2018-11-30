@@ -3,8 +3,7 @@
     <div class="login-logo">
       <%= image_tag("logo.png", :alt => "logo", height: 70) %>
     </div>
-    <h2>Welcome at Coffee Show</h2>
-    <h3>Log in to discover all the coffees produced next to you</h3>
+    <h2>Welcome at Cafe Show</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -18,11 +17,16 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+
+      <div class="adding-marging">
+
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
+        </div>
+          <%= render "devise/shared/links" %>
       </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
+
   </div>
 </div>

@@ -4,7 +4,7 @@
     <div class="card-container">
       <% @purchases.each do |purchase| %>
 
-        <div class="coffee-card">
+        <div class="coffee-card-no-hover">
           <%= link_to coffee_path(purchase.coffee) do %>
           <div class="coffee-card-main" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)),
          url('<%= cl_image_path purchase.coffee.picture, height: 300, width: 400, crop: :fill %>')">
