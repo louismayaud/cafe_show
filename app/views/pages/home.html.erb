@@ -13,6 +13,13 @@
           <div class="coffee-user">
             <%= cl_image_tag coffee.user.avatar, :width=>70, :crop=>"scale" %>
           </div>
+          <div class="coffee-grade">
+            <ul class="list-inline golden">
+              <% coffee.grade.times do %>
+                <li><i class="fas fa-star"></i></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
         <div class="coffee-card-footer">
           <div class="coffee-caracteristics">

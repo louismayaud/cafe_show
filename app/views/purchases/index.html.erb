@@ -14,6 +14,13 @@
             <div class="coffee-user">
               <%= cl_image_tag purchase.coffee.user.avatar, :width=>70, :crop=>"scale" %>
             </div>
+            <div class="coffee-grade">
+              <ul class="list-inline golden">
+                <% purchase.coffee.grade.times do %>
+                  <li><i class="fas fa-star"></i></li>
+                <% end %>
+              </ul>
+            </div>
           </div>
           <div class="coffee-card-footer">
             <div class="coffee-caracteristics">
@@ -32,7 +39,7 @@
               </div>
               <div class="coffee-add-edit-review">
                 <% if (purchase.coffee.reviews.select { |review| review.user == current_user }).empty? %>
-                  <strong><%= link_to "Add a review", new_review_path(purchase.coffee), id: "add-review-btn" %></strong>
+                  <strong><%= link_to "Add a review", coffee_path(purchase.coffee), id: "add-review-btn" %></strong>
                 <% else %>
                   <strong><%= link_to "Edit my review", edit_review_path((purchase.coffee.reviews.select { |review| review.user == current_user }).first), id: "edit-review-btn" %></strong>
                 <% end %>
