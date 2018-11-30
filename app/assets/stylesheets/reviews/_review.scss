@@ -1,0 +1,70 @@
+.coffee-reviews-inbox {
+  border: 1px solid #dce0e0;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  img {
+    padding-right: 10px;
+  }
+}
+
+.review-content-rating {
+  flex-grow: 1;
+}
+
+.new-review {
+  margin-bottom: 30px;
+  padding-top: 30px;
+  h3 {
+    padding-bottom: 20px;
+  }
+  .review-submit {
+    padding-left: 25px;
+  }
+}
+
+.coffee-reviews {
+  margin-bottom: 30px;
+  width: 60vw;
+}
+
+.review-creation {
+  padding-left: 10px;
+  min-width: 160px;
+  .review-user {
+    font-size: 16px;
+  }
+  .review-last-modification {
+    font-size: 12px;
+  }
+}
+
+.review-content-rating {
+  padding-left: 10px;
+}
+
+.review-content {
+  font-size: 14px;
+}
+
+.review-rating {
+  color: #E2B03C;
+}
+
+.review-submit-new {
+  padding-left: 20px;
+}
+
+.add-review-btn p {
+  color: orange;
+}
+
+.edit-review-btn {
+  color: blue;
+}

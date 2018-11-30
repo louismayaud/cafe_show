@@ -1,69 +1,74 @@
 <div class="wrapper">
-  <div class="row container_newform">
-    <%= simple_form_for (@coffee) do |c| %>
+  <div class="container">
+    <div class="row">
+      <%= simple_form_for (@coffee) do |c| %>
+        <% if @coffee.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @coffee.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-    <div class="photo_uploader col-md-3">
-      <%= c.input :picture %>
-      <%= c.input :picture_cache, as: :hidden %>
-    </div>
-
-      <% if @coffee.errors.any? %>
-        <div class="errors-container">
-          <ul>
-            <% @coffee.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
+      <div class="col-md-6 col-md-offset-3 start-new-coffee-form">
+        <div class="input_element_inline">
+          <div class="input_element">
+            <%= c.input :blend_name, placeholder: "eg: Lazy Sunday" %>
+          </div>
+          <div class="input_element">
+            <%= c.input :tree, label: 'Beans', collection: ["Arabica", "Robusta", "Blend"], prompt: 'Select Blend Composition' %>
+          </div>
         </div>
+
+        <div class="input_element_inline">
+          <div class="input_element">
+            <%= c.input :provenance, label: 'Country of Origin', placeholder: 'eg: Colombia, Ethiopia' %>
+          </div>
+          <div class="input_element">
+            <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"], prompt: "Select Machine" %>
+          </div>
+        </div>
+
+        <div class="input_element_inline">
+          <div class="input_element">
+          <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"], prompt: "Select flavour" %>
+          </div>
+          <div class="input_element">
+          <%= c.input :intensity, collection: ["morning", "noon", "night"], prompt: "Select Time of Day" %>
+          </div>
+        </div>
+
+        <div class="input_element_inline">
+          <div class="input_element">
+            <%= c.input :stock, placeholder: 'eg: 100', label: 'Availability per day' %>
+          </div>
+          <div class="input_element">
+            <%= c.input :price_per_unit, placeholder: 'eg: $12', label: 'Price' %>
+          </div>
+        </div>
+
+        <div class="input_element">
+          <%= c.input :description, label: 'Add a description', placeholder: 'What is the story behind your coffee ? ' %>
+        </div>
+
+      <div class="end-form">
+        <div class="photo_uploader col-md-3 btn">
+          <div id="hide" class="col-lg-8 col-xs-8">
+             <label class="hand-cursor">
+              <input type="file" nv-file-select uploader="$ctrl.uploader"/>
+              <span class="fa fa-camera"></span>
+              <span class="photo_text hidden-xs"> Add a Picture !</span>
+               </label>
+          </div>
+        </div>
+          <div class="input_element_btn">
+            <%= c.submit "Submit", class: "add_coffee_btn", id: "btn_validate" %>
+          </div>
+        </div>
+      </div>
       <% end %>
-
-    <div class="col-md-6">
-      <div class="input_element_inline">
-        <div class="input_element">
-          <%= c.input :blend_name, label: 'Blend Name' %>
-        </div>
-        <div class="input_element">
-          <%= c.input :tree, label: 'Arabica/Robusta', collection: ["Arabica", "Robusta"] %>
-        </div>
-      </div>
-
-      <div class="input_element_inline">
-        <div class="input_element">
-          <%= c.input :provenance, label: 'Country of Origin' %>
-        </div>
-        <div class="input_element">
-          <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"] %>
-        </div>
-      </div>
-
-      <div class="input_element_inline">
-        <div class="input_element">
-        <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"] %>
-        </div>
-        <div class="input_element">
-        <%= c.input :intensity, collection: ["morning", "noon", "night"] %>
-        </div>
-      </div>
-
-      <div class="input_element_inline">
-        <div class="input_element">
-          <%= c.input :stock, label: 'Availability per day' %>
-        </div>
-        <div class="input_element">
-          <%= c.input :price_per_unit, label: 'Price' %>
-        </div>
-      </div>
-
-      <div class="input_element">
-        <%= c.input :description, label: 'Add a description' %>
-      </div>
-
-
-      <div class="input_element_btn">
-        <%= c.submit "add a coffee", class: "btn btn-primary", id: "btn_validate" %>
-      </div>
     </div>
-    <% end %>
   </div>
 </div>
-

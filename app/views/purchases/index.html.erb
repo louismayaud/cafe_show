@@ -3,8 +3,9 @@
     <h1>My previous purchases</h1>
     <div class="card-container">
       <% @purchases.each do |purchase| %>
-        <div class="coffee-card">
 
+        <div class="coffee-card">
+          <%= link_to coffee_path(purchase.coffee) do %>
           <div class="coffee-card-main" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)),
          url('<%= cl_image_path purchase.coffee.picture, height: 300, width: 400, crop: :fill %>')">
             <div class="coffee-blend-name">
@@ -17,25 +18,29 @@
           <div class="coffee-card-footer">
             <div class="coffee-caracteristics">
               <ul>
-                <li>Drink during: <%= purchase.coffee.intensity.capitalize %></li>
-                <li>Perfect for: <%= purchase.coffee.machine %> </li>
-                <li>Flavour: <%= purchase.coffee.flavour %> </li>
+                <% if purchase.quantity > 1 %>
+                  <li>You have bought <strong><%= purchase.quantity %> bags </strong> </li>
+                <% else %>
+                  <li>You have bought <strong><%= purchase.quantity %> bag </strong></li>
+                <% end %>
+                <li>on the  <em><%= purchase.created_at.strftime("%d/%m/%Y") %> </em></li>
               </ul>
             </div>
             <div class="coffee-footer-price-and-provenance">
-              <div class="coffee-price">
-                <p><%= purchase.coffee.price_per_unit %> €</p>
+              <div class="coffee-total-price">
+                <p>Total: <strong><%= purchase.coffee.price_per_unit %>€</strong></p>
               </div>
-              <div class="coffee-provenance">
-                <%= purchase.coffee.provenance.split(' ').last %>
+              <div class="coffee-add-edit-review">
+                <% if (purchase.coffee.reviews.select { |review| review.user == current_user }).empty? %>
+                  <strong><%= link_to "Add a review", new_review_path(purchase.coffee), id: "add-review-btn" %></strong>
+                <% else %>
+                  <strong><%= link_to "Edit my review", edit_review_path((purchase.coffee.reviews.select { |review| review.user == current_user }).first), id: "edit-review-btn" %></strong>
+                <% end %>
               </div>
             </div>
           </div>
-
+          <% end %>
         </div>
-
-
-
 
       <% end %>
     </div>

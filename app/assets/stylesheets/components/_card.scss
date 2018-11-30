@@ -95,3 +95,23 @@
     list-style-type: none;
   }
 }
+
+.coffee-total-price p {
+  margin-bottom: 0px;
+  text-align: right;
+}
+
+.coffee-add-review p {
+  text-align: right;
+}
+
+#add-review-btn{
+  color: $main;
+}
+
+#edit-review-btn{
+  color: $main;
+}
+
+
+

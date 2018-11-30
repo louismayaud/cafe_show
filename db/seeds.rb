@@ -84,7 +84,7 @@ puts 'Creating 10 fake coffees from rodrigue'
     stock: rand(1..20),
     unit_sold: rand(1..20),
     blend_name: Faker::Coffee.blend_name,
-    tree: ["Arabica", "Robusta"].sample,
+    tree: ["Arabica", "Robusta", "Blend"].sample,
     description: Faker::Coffee.notes
 )
   coffee.user = rodrigue
@@ -117,7 +117,7 @@ puts 'Creating 10 fake coffees from Louis'
     stock: rand(1..20),
     unit_sold: rand(1..20),
     blend_name: Faker::Coffee.blend_name,
-    tree: ["Arabica", "Robusta"].sample,
+    tree: ["Arabica", "Robusta", "Blend"].sample,
     description: Faker::Coffee.notes
 )
   coffee.user = louis
