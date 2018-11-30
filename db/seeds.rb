@@ -87,7 +87,7 @@ puts 'Creating 10 fake coffees from rodrigue'
     unit_sold: rand(1..20),
     blend_name: Faker::Coffee.blend_name,
     tree: ["Arabica", "Robusta", "Blend"].sample,
-    description: ["The flavor can be caramel to chocolate like with some hints of smokiness.", "It is bittersweet, smoky, and pungent.", "amazingly aromatic with more pronounced characteristics of the French roast and lower yet in acidity.", "It produces a syrupy bittersweet shot of wonder that is the concentrated “essence” of coffee."].sample
+    description: ["The flavor can be caramel to chocolate like with some hints of smokiness. The beans are slow-roasted to perfection for a truly unique tasting experience.", "Our premium beans are carefully selected and expertly roasted to ensure a bold, smooth brew that you will love, take pride knowing that your coffee is Fair Trade, USDA Certified Organic and Kosher", "Amazingly aromatic with more pronounced characteristics of the French roast and lower yet in acidity. Our recipe uses 100% Arabica beans, which the industry regards as a superior grade of coffee", "It produces a syrupy bittersweet shot of wonder that is the concentrated 'essence' of coffee."].sample
 )
   coffee.user = rodrigue
   coffee.remote_picture_url = URL.sample
