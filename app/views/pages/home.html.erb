@@ -6,7 +6,7 @@
       <div class="coffee-card">
         <%= link_to coffee_path(coffee) do %>
         <div class="coffee-card-main" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)),
-         url('<%= cl_image_path coffee.picture, height: 300, width: 400, crop: :fill %>')">
+         url('<%= cl_image_path coffee.picture, :width=>100, :height=>100, :crop=> :fill %>')">
           <div class="coffee-blend-name">
             <%= coffee.blend_name.capitalize %>
           </div>

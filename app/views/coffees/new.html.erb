@@ -54,14 +54,9 @@
         </div>
 
       <div class="end-form">
-        <div class="photo_uploader col-md-3 btn">
-          <div id="hide" class="col-lg-8 col-xs-8">
-             <label class="hand-cursor">
-              <input type="file" nv-file-select uploader="$ctrl.uploader"/>
-              <span class="fa fa-camera"></span>
-              <span class="photo_text hidden-xs"> Add a Picture !</span>
-               </label>
-          </div>
+        <div class="photo_uploader col-md-3">
+          <%= c.input :picture, label: false, input_html: { class: 'photo_btn'} %>
+          <%= c.input :picture_cache, as: :hidden %>
         </div>
           <div class="input_element_btn">
             <%= c.submit "Submit", class: "add_coffee_btn", id: "btn_validate" %>

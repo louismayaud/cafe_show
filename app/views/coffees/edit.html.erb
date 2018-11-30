@@ -1,63 +1,64 @@
 <div class="wrapper">
-  <div class="row container_newform">
-    <%= simple_form_for (@coffee) do |c| %>
+  <div class="container">
+    <div class="row container_newform">
+      <%= simple_form_for (@coffee) do |c| %>
 
-    <div class="photo_uploader col-md-3">
-      <%= c.input :picture %>
-      <%= c.input :picture_cache, as: :hidden %>
-    </div>
-
-      <% if @coffee.errors.any? %>
-        <div class="errors-container">
-          <ul>
-            <% @coffee.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-    <div class="col-md-6">
-      <div class="input_element_inline">
-        <div class="input_element">
-          <%= c.input :blend_name, label: 'Blend Name', placeholder: 'blend_name' %>
-        </div>
-        <div class="input_element">
-          <%= c.input :tree, label: 'Arabica/Robusta', collection: ["Arabica", "Robusta"], placeholder: 'tree' %>
-        </div>
+      <div class="photo_uploader col-md-3">
+        <%= c.input :picture %>
+        <%= c.input :picture_cache, as: :hidden %>
       </div>
 
-      <div class="input_element_inline">
-        <div class="input_element">
-          <%= c.input :provenance, label: 'Country of Origin', placeholder: 'provenance' %>
-        </div>
-        <div class="input_element">
-          <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"], placeholder: 'machine' %>
-        </div>
-      </div>
+        <% if @coffee.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @coffee.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-      <div class="input_element_inline">
-        <div class="input_element">
-        <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"], placeholder: 'flavour' %>
+      <div class="col-md-6">
+        <div class="input_element_inline">
+          <div class="input_element">
+            <%= c.input :blend_name, label: 'Blend Name', placeholder: 'blend_name' %>
+          </div>
+          <div class="input_element">
+            <%= c.input :tree, label: 'Arabica/Robusta', collection: ["Arabica", "Robusta"], placeholder: 'tree' %>
+          </div>
         </div>
-        <div class="input_element">
-        <%= c.input :intensity, collection: ["morning", "noon", "night"], placeholder: 'the best moment', label: 'Drink during' %>
+
+        <div class="input_element_inline">
+          <div class="input_element">
+            <%= c.input :provenance, label: 'Country of Origin', placeholder: 'provenance' %>
+          </div>
+          <div class="input_element">
+            <%= c.input :machine, label: 'Optimized for', collection: ["Bean expresso", "French press", "Filter", "Italian", "Aeropress"], placeholder: 'machine' %>
+          </div>
         </div>
-      </div>
+
+        <div class="input_element_inline">
+          <div class="input_element">
+          <%= c.input :flavour, collection: ["Sweet", "Fruity", "Bitter", "Citric"], placeholder: 'flavour' %>
+          </div>
+          <div class="input_element">
+          <%= c.input :intensity, collection: ["morning", "noon", "night"], placeholder: 'the best moment', label: 'Drink during' %>
+          </div>
+        </div>
 
       <div class="input_element_inline">
         <div class="input_element">
           <%= c.input :stock, label: 'Quantity available', placeholder: 'stock' %>
         </div>
         <div class="input_element">
-          <%= c.input :price_per_unit, label: 'Price', placeholder: 'price_per_unit' %>
+           <%= c.input :price_per_unit, label: 'Price', placeholder: 'price_per_unit' %>
         </div>
       </div>
       <div class="input_element_btn">
-        <%= c.submit "Edit coffee", class: "btn btn-primary", id: "btn_validate" %>
+          <%= c.submit "Edit coffee", class: "btn btn-primary", id: "btn_validate" %>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 
