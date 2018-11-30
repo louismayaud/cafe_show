@@ -19,7 +19,6 @@ class CoffeesController < ApplicationController
     @coffee = Coffee.new(coffee_params)
     authorize @coffee
     @coffee.user = current_user
-
     if @coffee.save
       redirect_to coffees_path
     else
@@ -51,7 +50,7 @@ class CoffeesController < ApplicationController
   private
 
   def coffee_params
-    params.require(:coffee).permit(:blend_name, :provenance, :machine, :flavour, :intensity, :stock, :price_per_unit, :tree, :picture)
+    params.require(:coffee).permit(:blend_name, :provenance, :machine, :flavour, :intensity, :stock, :price_per_unit, :tree, :picture, :description)
   end
 
   def set_coffee

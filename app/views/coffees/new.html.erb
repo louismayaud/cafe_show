@@ -1,3 +1,8 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
 <div class="wrapper">
   <div class="container">
     <div class="row">
@@ -54,20 +59,22 @@
         </div>
 
       <div class="end-form">
-        <div class="photo_uploader col-md-3 btn">
-          <div id="hide" class="col-lg-8 col-xs-8">
-             <label class="hand-cursor">
-              <input type="file" nv-file-select uploader="$ctrl.uploader"/>
-              <span class="fa fa-camera"></span>
-              <span class="photo_text hidden-xs"> Add a Picture !</span>
-               </label>
+        <div class="container">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label>Upload Image</label>
+                  <div class="input-group">
+                      <span class="input-group-btn">
+                          <span class="btn btn-default btn-file">
+                              Browse… <input type="file" id="imgInp">
+                          </span>
+                      </span>
+                      <input type="text" class="form-control" readonly>
+                  </div>
+                  <img id='img-upload'/>
+              </div>
           </div>
         </div>
-          <div class="input_element_btn">
-            <%= c.submit "Submit", class: "add_coffee_btn", id: "btn_validate" %>
-          </div>
-        </div>
-      </div>
       <% end %>
     </div>
   </div>
