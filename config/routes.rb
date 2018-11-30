@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :reviews, only: [:edit, :update]
   resources :purchases, only: [:index, :show]
   resources :pages, only: [:index]
+  get 'knowledge', to: "pages#knowledge", as: :knowledge
 end

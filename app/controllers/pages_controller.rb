@@ -7,4 +7,7 @@ class PagesController < ApplicationController
       @coffees = Coffee.all
     end
   end
+
+  def knowledge
+  end
 end

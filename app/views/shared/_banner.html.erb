@@ -7,13 +7,13 @@
 
     <div class="searchbar">
       <div class="text_searchbar">
-        <h3>choose your coffee's machine and intensity</h3>
+        <h3>Seach by Machine or Drinking time : </h3>
       </div>
-        <%= form_tag root_path, method: :get do %>
+        <%= form_tag root_path, id: "testme", method: :get do %>
           <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Type machine model and intensity"
+          placeholder: "French-press, Aeropress, Morning ..."
         %>
       <% end %>
     </div>
