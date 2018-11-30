@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+
+
+.wrapper_show {
+  width: 100vw;
+  justify-content: center;
+  background-image: url("img_girl.jpg");
+}
+
+.container_coffee_picture_show {
+  height:100vd;
+}
+
+.coffee_picture_show {
+  position: fixed;
+  right: 20px;
+  top: 300px;
+  margin: 80px auto;
+  width: 300px;
+  height: 250px;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.coffee_banner_img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.coffee_machine_picture img {
+  text-align: center;
+  width: 150px;
+  height: 150px;
+}
+
+.coffee_machine_picture {
+}
+
+.coffee_title {
+  max-width: 60vw;
+  padding-left: 30px;
+}
+
+
+.coffee_presentation {
+  display: flex;
+  justify-content: space-around;
+  max-width: 60vw;
+}
+
+.coffee_characteristics {
+  padding-left: 20px;
+  padding-top: 5px;
+  justify-content: flex-start;
+  width: 40vw;
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+}
+
+.coffee_price {
+  color: #004A66;
+  text-align: right;
+  font-size: 30px;
+}
+
+
+.coffee_text_description {
+  max-width: 60vw;
+  min-height: 100px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 30px;
+}
+
+.roaster_title {
+  max-width: 60vw;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
+.roaster_presentation {
+  display: flex;
+  justify-content: space-around;
+  max-width: 60vw;
+}
+
+.roaster_avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: solid;
+}
+
+.roaster_characteristics {
+  padding-left: 20px;
+  padding-bottom: 5px;
+  justify-content: flex-start;
+  width: 40vw;
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+}
+
+.roaster_text_description {
+  max-width: 60vw;
+  min-height: 100px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 30px;
+}
