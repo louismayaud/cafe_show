@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_103218) do
+ActiveRecord::Schema.define(version: 2018_11_30_104935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_103218) do
     t.datetime "updated_at", null: false
     t.string "tree"
     t.text "description"
+    t.integer "grade"
     t.index ["user_id"], name: "index_coffees_on_user_id"
   end
 

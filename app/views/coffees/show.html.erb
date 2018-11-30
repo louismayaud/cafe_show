@@ -28,7 +28,14 @@
           <p><strong>Flavour</strong>: <%= @coffee.flavour %></p>
           <p><strong>Tree</strong>: <%= @coffee.tree %></p>
           <p><strong>Provenance</strong>: <%= @coffee.provenance %></p>
-          <p><strong>Rating:</strong> Rating pending</p>
+          <p>
+            <ul class="list-inline golden">
+              <li><strong>Rating: </strong></li>
+              <% @coffee.grade.times do %>
+                <li><i class="fas fa-star"></i></li>
+              <% end %>
+            </ul>
+          </p>
         </div>
       <div class="coffee_machine_picture">
         <% if @coffee.machine == "Bean expresso"%>
@@ -102,7 +109,7 @@
                 <div class="review-rating">
                   <ul class="list-inline golden">
                     <% review.rating.times do %>
-                      <li><i class="fas fa-coffee"></i></li>
+                      <li><i class="fas fa-star"></i></li>
                     <% end %>
                   </ul>
                 </div>

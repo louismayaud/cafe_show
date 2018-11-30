@@ -65,11 +65,21 @@
     color: white;
   }
   .coffee-blend-name {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  color: white;
-}
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: white;
+  }
+  .coffee-grade {
+    position: absolute;
+    bottom: -12px;
+    left: 5px;
+    .golden li {
+      padding-left: 0px;
+      padding-right: 0px;
+      font-size: 16px;
+    }
+  }
 }
 
 .coffee-card-footer {
