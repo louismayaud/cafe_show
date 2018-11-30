@@ -46,17 +46,16 @@
           </div>
         </div>
 
-        <div class="input_element_inline">
-          <div class="input_element">
-            <%= c.input :stock, label: 'Availability per day', placeholder: 'stock' %>
-          </div>
-          <div class="input_element">
-            <%= c.input :price_per_unit, label: 'Price', placeholder: 'price_per_unit' %>
-          </div>
+      <div class="input_element_inline">
+        <div class="input_element">
+          <%= c.input :stock, label: 'Quantity available', placeholder: 'stock' %>
         </div>
-        <div class="input_element_btn">
+        <div class="input_element">
+           <%= c.input :price_per_unit, label: 'Price', placeholder: 'price_per_unit' %>
+        </div>
+      </div>
+      <div class="input_element_btn">
           <%= c.submit "Edit coffee", class: "btn btn-primary", id: "btn_validate" %>
-        </div>
       </div>
       <% end %>
     </div>

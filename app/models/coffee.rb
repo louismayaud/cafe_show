@@ -1,7 +1,7 @@
 class Coffee < ApplicationRecord
   belongs_to :user
   has_many :purchases, dependent: :destroy
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   validates :user_id, presence: true
   validates :price_per_unit, presence: true, numericality: { only_float: true }

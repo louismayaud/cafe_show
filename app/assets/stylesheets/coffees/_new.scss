@@ -15,10 +15,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 0px;
   margin: 0px 50px;
     h1 {
-      color: $main;
       margin: 0px;
       text-shadow: 2px 1px 3px rgba(0,0,0,0.1);
     }
@@ -61,8 +60,9 @@
   width: 750px;
   display:flex;
   text-align:left;
-  justify-content:space-around;
-  position:relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .characteristics-name{
@@ -110,3 +110,6 @@ a {
   color: #377cea;
 }
 
+h1 {
+  color:$blue;
+}

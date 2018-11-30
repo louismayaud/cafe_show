@@ -5,6 +5,7 @@ class CoffeesController < ApplicationController
   end
 
   def show
+    Average.new.compute_average_one(@coffee)
     authorize @coffee
     @review = Review.new
   end

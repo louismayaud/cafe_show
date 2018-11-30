@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Upright');
 
 
 .wrapper_show {
   width: 100vw;
   justify-content: center;
   background-image: url("img_girl.jpg");
+}
+
+h3 {
+  color:$blue;
 }
 
 .container_coffee_picture_show {
@@ -52,14 +57,16 @@
 }
 
 .coffee_characteristics {
-  padding-left: 20px;
-  padding-top: 5px;
+  // padding-left: 20px;
+  // padding-top: 5px;
+  padding: 25px 20px;
   justify-content: flex-start;
   width: 40vw;
   border-radius: 10px;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
   border-radius: 6px;
+  font-size: 16px;
 }
 
 .coffee_price {
@@ -74,7 +81,7 @@
   min-height: 100px;
   padding: 20px;
   text-align: center;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Cormorant Upright', serif;
   font-size: 30px;
 }
 
@@ -99,14 +106,16 @@
 }
 
 .roaster_characteristics {
-  padding-left: 20px;
-  padding-bottom: 5px;
+  // padding-left: 20px;
+  // padding-bottom: 5px;
+  padding: 15px 20px 10px 20px;
   justify-content: flex-start;
   width: 40vw;
   border-radius: 10px;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
   border-radius: 6px;
+  font-size: 16px;
 }
 
 .roaster_text_description {
@@ -114,6 +123,10 @@
   min-height: 100px;
   padding: 20px;
   text-align: center;
-  font-family: 'Satisfy', cursive;
+  font-family: 'Cormorant Upright', serif;
   font-size: 30px;
+}
+
+.golden strong {
+  color: rgb(51, 51, 51);
 }

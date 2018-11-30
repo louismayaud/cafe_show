@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   def index
+    Average.new.compute_average_all
     @purchases = policy_scope(Purchase).order(created_at: :desc)
   end
 

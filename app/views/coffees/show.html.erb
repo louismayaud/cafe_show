@@ -19,15 +19,23 @@
 
 
     <div class="coffee_title">
-      <h3>Savour the coffee: <%= @coffee.blend_name %></h3>
+      <h3>Savour the coffee: <strong><%= @coffee.blend_name %></strong></h3>
     </div>
 
     <div class="coffee_presentation">
       <div class="coffee_characteristics">
-          <p>Drink during: <%= @coffee.intensity.capitalize %></p>
-          <p>Flavour: <%= @coffee.flavour %></p>
-          <p>Tree: <%= @coffee.tree %></p>
-          <p>Provenance: <%= @coffee.provenance %></p>
+          <p><strong>Drink during</strong>: <%= @coffee.intensity.capitalize %></p>
+          <p><strong>Flavour</strong>: <%= @coffee.flavour %></p>
+          <p><strong>Tree</strong>: <%= @coffee.tree %></p>
+          <p><strong>Provenance</strong>: <%= @coffee.provenance %></p>
+          <p>
+            <ul class="list-inline golden">
+              <li><strong>Rating: </strong></li>
+              <% @coffee.grade.times do %>
+                <li><i class="fas fa-star"></i></li>
+              <% end %>
+            </ul>
+          </p>
         </div>
       <div class="coffee_machine_picture">
         <% if @coffee.machine == "Bean expresso"%>
@@ -41,7 +49,7 @@
         <% else %>
         <% machine_image = asset_path 'machine_aeropress.png'%>
         <% end %>
-        <p style="text-align: center">Best for</p>
+        <p style="text-align: center">Best for:</p>
         <%= image_tag("#{machine_image}", :alt => "MACHINE") %>
         <strong><p style="text-align: center"><%= @coffee.machine %></p></strong>
       </div>
@@ -63,9 +71,9 @@
         <%= cl_image_tag @coffee.user.avatar, class: "roaster_avatar" %>
       </div>
       <div class="roaster_characteristics">
-        <p>Address: <%= @coffee.user.address %></p>
-        <p>Registered since: <%= @coffee.user.created_at.strftime("%d/%m/%Y") %></p>
-        <p>Number of sales: <%= @coffee.user.purchases.count %></p>
+        <p><strong>Address</strong>: <%= @coffee.user.address %></p>
+        <p><strong>Registered since</strong>: <%= @coffee.user.created_at.strftime("%d/%m/%Y") %></p>
+        <p><strong>Number of sales</strong>: <%= @coffee.user.purchases.count %></p>
       </div>
     </div>
 
@@ -101,7 +109,7 @@
                 <div class="review-rating">
                   <ul class="list-inline golden">
                     <% review.rating.times do %>
-                      <li><i class="fas fa-coffee"></i></li>
+                      <li><i class="fas fa-star"></i></li>
                     <% end %>
                   </ul>
                 </div>

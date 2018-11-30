@@ -34,8 +34,6 @@
 
 .information{
   width: 300px;
-  display: flex;
-  justify-content: space-around;
 }
 
 .blend_name{
@@ -65,16 +63,15 @@
   right: 10px;
   bottom: 10px;
   display:inline-block;
-  padding:0.7em 1.4em;
+  padding:0.7em 0.4em;
   margin:0 0.3em 0.3em 0;
   border-radius:0.15em;
   text-decoration:none;
-  text-transform:uppercase;
   font-weight:400;
   background-color: $font-main;
   text-align:center;
   height: 50px;
-  width: 150px;
+  width: 160px;
   text-decoration: none;
   a {
     color: $main;
@@ -92,6 +89,16 @@
 
 .information-on-coffee {
   text-align: right;
+}
+
+.in-stock {
+  color: green;
+}
+
+.basket-coffee-information {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
 }
 
 

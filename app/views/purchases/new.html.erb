@@ -7,7 +7,9 @@
         </div>
 
         <div class ="message-name">
-          <p> <%= @coffee.blend_name %></p>
+          <div id="name-coffee-larger">
+            <p> <%= @coffee.blend_name %></p>
+          </div>
         </div>
         <div class="characteristics">
           <div class="characteristics-name">
@@ -20,7 +22,7 @@
             <p><%= @coffee.flavour%></p>
             <p><%= @coffee.machine%></p>
           </div>
-          <div class ="message-description">
+          <div id ="message-description">
             <p width="50%"> <%= @coffee.description %></p>
           </div>
             <div id="box-stock">

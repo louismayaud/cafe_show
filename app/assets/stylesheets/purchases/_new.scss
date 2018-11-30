@@ -1,6 +1,10 @@
 .text-body{
   margin-right: 350px;
 }
+
+h1 {
+  color:$blue;
+}
 #box-stock{
   width: 100px;
   display: inline-flex;
@@ -8,8 +12,12 @@
   justify-content: center;
   vertical-align: middle;
   align-items: center;
-  p {
-    font-size: 15px;
+}
+
+#name-coffee-larger{
+  display: inline-flex;
+  p{
+    font-size:20px;
   }
 }
 
@@ -36,3 +44,8 @@
   }
 }
 
+#message-description {
+    flex: 0 0 35%;
+    padding: 10px;
+    padding-left: 30px;
+}
