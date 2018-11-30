@@ -8,11 +8,13 @@ const searchResult = document.getElementById("search-result")
 // if (searchBar) {
 //   searchBar.addEventListener("keypress", event => {
 //     if (event.keyCode === 13) {
-//       searchResult.scrollIntoView()
+//       console.log("test");
+//       window.scrollIntoView(true)
+//       // event.stopPropagation()
 //     }
 //   })
 // }
 
-if (searchResult){
-  searchBar.scrollIntoView()
-}
+// if (searchResult){
+//   searchBar.scrollIntoView()
+// }
