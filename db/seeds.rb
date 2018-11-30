@@ -66,9 +66,11 @@ rodrigue = User.new(
   email: "rodrigue@gmail.com",
   password: '12345678',
   billing_information: rand(1000000000..5000000000),
-  address: "1 rue Rodrigue, 75011 Paris",
-  introduction: "Coucou je m'appelle Rodrigue et j'aime vendre du café"
-)
+  address: "1 rue de la Gariguette, 75011 Paris",
+  introduction: "Bonjour je m'appelle Rodrigue, je suis originaire du Sud-Ouest de la France et je viens d'une grande famille qui a toujours travaillé dans le café.
+  Je suis sur Coffee Show car c'est une opportunitée pour moi de vendre mes produits à des clients que je ne pourrai pas atteindre seul.
+  J'espère que vous allez apprécié mes différents produits."
+  )
 fetch_company_images(rodrigue)
 rodrigue.save!
 
@@ -85,7 +87,7 @@ puts 'Creating 10 fake coffees from rodrigue'
     unit_sold: rand(1..20),
     blend_name: Faker::Coffee.blend_name,
     tree: ["Arabica", "Robusta", "Blend"].sample,
-    description: Faker::Coffee.notes
+    description: ["The flavor can be caramel to chocolate like with some hints of smokiness. The beans are slow-roasted to perfection for a truly unique tasting experience.", "Our premium beans are carefully selected and expertly roasted to ensure a bold, smooth brew that you will love, take pride knowing that your coffee is Fair Trade, USDA Certified Organic and Kosher", "Amazingly aromatic with more pronounced characteristics of the French roast and lower yet in acidity. Our recipe uses 100% Arabica beans, which the industry regards as a superior grade of coffee", "It produces a syrupy bittersweet shot of wonder that is the concentrated 'essence' of coffee."].sample
 )
   coffee.user = rodrigue
   coffee.remote_picture_url = URL.sample
@@ -99,8 +101,9 @@ louis = User.new(
   email: "louis@gmail.com",
   password: '12345678',
   billing_information: rand(1000000000..5000000000),
-  address: "1 rue Louis, 75011 Paris",
-  introduction: "Coucou je m'appelle Louis et le café c'est toute ma vie"
+  address: "1 rue Louis, 75007 Paris",
+  introduction: "Coucou je m'appelle Louis, j'ai 29 ans et après avoir vécu 2 ans au Honduras et au Brésil, je me suis passioné pour le café et je viens de me lancer dans la toréfaction il y a quelques mois.
+  N'hésitez pas à me contacter si vous désirez plus d'informations sur mes produits ou mes méthodes de travail."
 )
 fetch_company_images(louis)
 louis.save!
@@ -132,8 +135,9 @@ sacha = User.new(
   email: "sacha@gmail.com",
   password: '12345678',
   billing_information: rand(1000000000..5000000000),
-  address: "1 rue Sacha, 75011 Paris",
-  introduction: "Coucou je m'appelle Sacha et le café le matin me donne la forme"
+  address: "1 rue du café, 69001 Lyon",
+  introduction: "Hello je m'appelle Sacha, j'habite à Paris et je cherche à boire des nouveaux cafés toutes les semaines.
+  Je recherche les prixs les plus abordables et des producteurs qui respectent l'environment."
 )
 fetch_avatar_images(sacha)
 sacha.save!
@@ -144,8 +148,8 @@ thibaut = User.new(
   email: "thibaut@gmail.com",
   password: '12345678',
   billing_information: rand(1000000000..5000000000),
-  address: "1 rue Thibaut, 75011 Paris",
-  introduction: "Coucou je m'appelle Thibaut et je n'aime pas le café mais ce site est sympa"
+  address: "1 rue Oberkampf, 75011 Paris",
+  introduction: "Coucou je m'appelle Thibaut et j'adore le café! J'en bois tout les matins."
 )
 fetch_avatar_images(thibaut)
 thibaut.save!
