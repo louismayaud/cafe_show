@@ -6,25 +6,30 @@
       <div class="item">
 
         <div class="information">
-          <div class="description">
-            <p>Name : </p>
-            <p>Available : </p>
-          </div>
-          <div class="information-on-coffee">
-            <div class="blend">
+          <div class="basket-coffee-information">
+            <div class= "text-left">
+              <p>Name:</p>
+            </div>
+            <div class= "text-right">
               <p><%= coffee.blend_name %></p>
             </div>
-            <div class="in-stock">
-              <p><strong><%= coffee.stock %></strong></p>
-            </div>
+          </div>
+          <div class="basket-coffee-information">
+            <p>Available:</p>
+            <p class="in-stock"><strong><%= coffee.stock %></strong></p>
           </div>
         </div>
-          <div class="total-price">
+
+
+        <div class="total-price">
             <p><strong><%= coffee.price_per_unit %>€</strong></p>
-          </div>
-        <div class="validation">
-          <p><%=link_to "Checkout", new_coffee_purchase_path(coffee)%></p>
         </div>
+
+
+        <div class="validation">
+          <p><%=link_to "Add to basket <i class='fas fa-shopping-basket'></i>".html_safe, new_coffee_purchase_path(coffee)%></p>
+        </div>
+
       </div>
     </div>
   </div>
