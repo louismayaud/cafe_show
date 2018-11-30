@@ -1,9 +1,9 @@
-  <div class="home-banner">
-    <p>
-      <span id="banner-typed-text"></span>
-    </p>
+<div class="home-banner">
+  <p>
+    <span id="banner-typed-text"></span>
+  </p>
 
-    <br>
+  <br>
 
     <div class="searchbar">
       <div class="text_searchbar">
@@ -22,5 +22,12 @@
     </div>
 
     </div>
+      <%= form_tag root_path, id: "testme", method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "French-press, Aeropress, Morning ..."
+      %>
+    <% end %>
   </div>
-\
+</div>
